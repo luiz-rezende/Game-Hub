@@ -1,0 +1,485 @@
+/* 1. Seletor Universal (Reseta todos os elementos) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Estilização Global da Página */
+body {
+    padding-top: 70px;      /* Mesma altura do seu header */
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+  line-height: 1.6;
+}
+/* 3. Estilização do Cabeçalho */
+header{
+    background-color: #000000;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    height: 70px;
+    position: fixed;        /* Fixa o menu na tela durante a rolagem */
+    top: 0;                 /* Cola no topo absoluto */
+    left: 0;                /* Alinha na lateral esquerda */
+    width: 100%;            /* Garante que o menu ocupe toda a largura da tela */
+    z-index: 9999;          /* Camada ultra alta para passar por cima das fotos e botões */
+    border-bottom: 1px solid #161b22; /* Linha sutil opcional para separar o menu do resto do site */
+}
+
+nav{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    width: 50%;
+}
+
+ul{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    width: 100%;
+}
+
+li{
+    list-style:none;
+    background-color: #000000;
+    color: white;
+}
+
+li a{
+    text-decoration:none;
+    color: white;
+    font-size: 15px;
+}
+
+h1{
+    color:white
+}
+
+span{
+    color:blueviolet;
+}
+
+header input{
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #00000007;
+    background-color: #0e1118;
+    padding: 5px;
+}
+
+.input-busca::placeholder {
+  font-family: "Font Awesome 6 Free", Arial, sans-serif; /* Ativa a fonte de ícones */
+  font-weight: 900; /* Obrigatório para o Font Awesome funcionar */
+  color: #999;     /* Cor cinza sutil para a lupa e o texto */
+}
+
+header button{
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #00000007;
+    background-color: blueviolet;
+    color:white;
+    cursor:pointer;
+}
+
+/* 4. Estilização do Conteúdo Principal */
+
+.carrossel-container {
+  height: 450px;
+  position: relative; 
+  display: flex;
+  
+}
+
+.carrossel-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz a imagem cobrir o espaço sem distorcer */
+  z-index: 1;        /* Fica na camada de baixo */
+  object-position: center 30%; 
+
+  -webkit-mask-image: linear-gradient(to top, black 70%, transparent 100%);
+  mask-image: linear-gradient(to top, black 70%, transparent 100%);
+
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.carrossel-container h1 {
+  position: relative; /* Permite usar o z-index */
+  z-index: 2;        /* Fica na camada de cima, sobre a imagem */
+  color: #ffffff;    /* Altere para a cor que desejar */
+  font-family: sans-serif;
+  margin-top:100px;
+  margin-left: 100px;
+  font-size: 40px;
+}
+
+.carrossel-container span {
+  position: relative; /* Permite usar o z-index */
+  z-index: 2;        /* Fica na camada de cima, sobre a imagem */
+  color: blueviolet;    /* Altere para a cor que desejar */
+  font-family: sans-serif;
+  margin-top:60px;
+  margin-left: 100px;
+  font-size: 50px;
+  font-weight: bold;
+
+}
+
+.carrossel-container p {
+  position: relative; /* Permite usar o z-index */
+  z-index: 2;        /* Fica na camada de cima, sobre a imagem */
+  color: rgb(255, 255, 255);    /* Altere para a cor que desejar */
+  font-family: sans-serif;
+  margin-left: 100px;
+
+}
+
+.carrossel-text{
+    height: 100%;
+    width: 30%;
+}
+
+.carrossel-container button { 
+  position: relative; /* Permite usar o z-index */
+  z-index: 2;        /* Fica na camada de cima, sobre a imagem */
+  background-color: blueviolet;    /* Altere para a cor que desejar */
+  font-family: sans-serif;
+  color: white;
+  margin-top: 20px;
+  height: 50px;
+  width: 200px;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  margin-left: 100px;
+  font-weight: bold;
+  cursor: pointer; /* Dica: adiciona a mãozinha do mouse ao passar por cima */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ALTERADO AQUI: Agora o seletor aponta exatamente para o mesmo botão */
+.carrossel-container button:hover {
+    /* Move o botão 5 pixels para cima no eixo Y */
+    transform: translateY(-5px); 
+    
+    /* Adiciona uma sombra para dar efeito de profundidade/altura */
+    box-shadow: 0 10px 20px rgb(98, 48, 146); 
+}
+
+
+
+.nav{
+    display:flex;
+    justify-content:space-between;
+    width: 100%;
+    height: 50px;
+}
+
+.nav h2 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-left: 40px;
+}
+
+.nav button {
+    background-color: #0e1118;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-right: 40px;
+}
+
+
+.jogos-destaque {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha se necessário */
+    padding: 20px;
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+/* Container principal que segura todos os cards */
+.jogos-destaque {
+    display: flex;
+    gap: 16px; /* Espaçamento exato entre cada card */
+    background-color: #000000; /* Fundo escuro do site de jogos */
+    padding: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite quebrar a linha se a tela for pequena */
+}
+
+/* Estrutura individual de cada card */
+.card-jogo {
+    background-color: #0b0e14; /* Fundo cinza escuro do card */
+    border: 1px solid #161b22; /* Borda sutil do card */
+    border-radius: 12px;       /* Bordas bem arredondadas como na imagem */
+    width: 210px;              /* Largura ideal baseada na proporção */
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;                  /* Espaçamento vertical interno uniforme */
+}
+
+/* Container que segura as imagens dos jogos */
+.card-jogo .capa-container {
+    width: 100%;
+    height: 260px;
+    border-radius: 8px;        /* Bordas arredondadas da própria foto */
+    overflow: hidden;
+}
+
+.card-jogo .capa-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* Encaixa a imagem sem distorcer */
+}
+
+/* Estilização do título do jogo */
+.card-jogo .titulo-jogo {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 4px 0 0 0;
+    white-space: nowrap;       /* Evita que o texto quebre linhas estranhas */
+    overflow: hidden;
+    text-overflow: ellipsis;   /* Adiciona os "..." se o nome for gigante */
+}
+
+/* Seção de avaliação (Estrela + Nota) */
+.card-jogo .avaliacao {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.card-jogo .avaliacao .estrela {
+    color: #ff9900;            /* Cor laranja idêntica à estrela da foto */
+    font-size: 12px;
+}
+
+.card-jogo .avaliacao .nota {
+    color: #8b949e;            /* Cor cinza do texto da nota */
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Área que envelopa as tags de gênero */
+.card-jogo .tags {
+    display: flex;
+    gap: 6px;
+    margin-top: auto;          /* Empurra as tags sempre para o fundo do card */
+}
+
+/* Estilo de cada tag individual */
+.card-jogo .tag {
+    background-color: #161b22; /* Fundo escuro leve das tags */
+    color: #8b949e;            /* Texto cinza claro */
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 4px;        /* Bordas das tags ligeiramente arredondadas */
+    font-weight: 500;
+}
+
+.footer-site {
+    background-color: #000000; /* Mesmo cinza escuro dos seus cards */
+    border-top: 1px solid #161b22; /* Borda superior sutil */
+    color: #8b949e; /* Texto cinza claro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px 20px 20px 20px;
+    margin-top: 50px; /* Garante um espaçamento da seção de cima */
+}
+
+/* Alinhamento das colunas em linha */
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Quebra linha em telas menores (celulares) */
+    gap: 30px;
+}
+
+/* Configuração de cada coluna individual */
+.footer-coluna {
+    flex: 1;
+    min-width: 200px; /* Impede que fiquem esmagadas */
+}
+
+/* Estilo específico da primeira coluna (Sobre) */
+.footer-coluna.sobre h2 {
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.footer-coluna.sobre h2 span {
+    color: blueviolet; /* Usa o mesmo roxo do seu botão */
+}
+
+.footer-coluna.sobre p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Estilo dos títulos das outras colunas */
+.footer-coluna h3 {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Listas de links */
+.footer-coluna ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-coluna ul li {
+    margin-bottom: 12px;
+}
+
+.footer-coluna ul li a {
+    color: #8b949e;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+/* Efeito ao passar o mouse nos links */
+.footer-coluna ul li a:hover {
+    color: blueviolet; /* Destaca com o roxo do seu tema */
+}
+
+/* Bloco das redes sociais */
+.redes-sociais {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.redes-sociais a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    transition: transform 0.2s ease;
+}
+
+.redes-sociais a:hover {
+    transform: translateY(-3px); /* Leve subida ao passar o mouse */
+}
+
+/* Faixa de direitos autorais no fundo */
+.footer-inferior {
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid #161b22;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+
+
+/* Estilização da seção de notícias */
+
+.text-noticia {
+    color: #ffffff;  
+    margin-top: 40px;
+    margin-left: 70px;     
+    height: 130px;
+    width: 40%;                
+}
+
+.anuncios {
+    display: flex;
+    justify-content: space-between;
+}
+
+.anuncio-gta {
+    color: #ffffff;  
+    margin-left: 70px;     
+    height: 400px;
+    width: 45%;
+    position: relative;
+    display: grid;
+    grid-template-areas: "sobrepor"; /* Define uma área única de empilhamento */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+.anuncio-gta img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* Faz a imagem cobrir o espaço sem distorcer */ 
+    border-radius: 10px; 
+    z-index: 1; /* Fica na camada de baixo */ 
+    grid-area: sobrepor;
+} 
+
+.anuncio-gta h1 { 
+    grid-area: sobrepor;
+    margin-top: 250px;
+    width: 40%;
+    margin-left: 30px;
+    color: #ffffff; 
+    font-size: 30px; 
+    position: relative; /* Permite usar o z-index */ 
+    z-index: 2; 
+}
+
+.anuncio-gta button{
+    grid-area: sobrepor;
+    margin-top: 330px;
+    width: 155px;
+    height: 50px;
+    color: blueviolet;
+    background: transparent;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    position: relative; /* Permite usar o z-index */ 
+    z-index: 2;
+
+}
+
+.outros-anuncios{
+    border: 1px solid pink;
+    display: flex;
+    color: #ffffff;  
+    justify-content: space-between;    
+    height: 400px;
+    width: 40%;
+    margin-right: 70px;
+    flex-direction: column;
+}
+
+.anuncio-1{
+    border: 1px solid #fc0000;
+    height: 45%;
+    width: 100%;
+}
+
+.anuncio-2{
+    border: 1px solid #18c438;
+    height: 45%;
+    width: 100%;
+}
+
+
