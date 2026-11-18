@@ -1,173 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAMEHUB</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cloudflare.com">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAMEHUB - Entrar</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<header> 
-    <h1><span>G</span>AME<span>HUB</span></h1>
-    <nav>
-        <ul>
-            <li><a href="inici.html">INICIO</a></li>
-            <li><a href="jogos.html">JOGOS</a></li>
-            <li><a href="ranking.html">RANKING</a></li>
-            <li><a href="noticias.html">NOTICIAS</a></li>
-            <li><a href="contato.html">CONTATO</a></li>
-        </ul>
-    </nav>
-    <form action="/buscar" method="GET">
-        <input type="search" name="q" placeholder="Buscar jogos...">
-        <button type="submit">ENTRAR</button>
-    </form>
-</header>
-<body>
-    <div class="carrossel-container">
-        <img src="img/gamehub-hero.jpg" alt="#">
-        <div class="carrossel-text">
-            <h1>O UNIVERSO</h1>
-            <span>DOS GAMES</span> 
-            <p>
-                Descubra o universo dos games e explore uma variedade de jogos emocionantes,
-                notícias atualizadas e rankings competitivos. Junte-se à nossa
-                comunidade de jogadores e mergulhe na diversão!
-            </p> 
-           
-            <button type="submit"> EXPLORAR JOGOS &#10142;</button>
-        </div>
-    </div>
-    <div class="container">
-        <nav class="nav">
-            <h2>JOGOS EM DESTAQUE</h2>
-            <button type="submit">VER TODOS &#10142;</button>
-        </nav>
-       <div class="jogos-destaque">
-    <!-- Card 1: Elden Ring -->
-    <div class="card-jogo">
-        <div class="capa-container">
-            <img src="img/eldering.jpg" alt="Elden Ring">
-        </div>
-        <h3 class="titulo-jogo">Elden Ring</h3>
-        <div class="avaliacao">
-            <span class="estrela">★</span>
-            <span class="nota">8.8/10</span>
-        </div>
-        <div class="tags">
-            <span class="tag">RPG</span>
-            <span class="tag">Aventura</span>
-        </div>
+<body class="pagina-login">
+
+  <header>
+    <a href="index.html" class="logo"><span class="p">G</span><span class="w">AME</span><span class="p">HUB</span></a>
+  </header>
+
+  <main class="login-main">
+    <div class="skyline" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
     </div>
 
-    <!-- Card 2: God of War -->
-    <div class="card-jogo">
-        <div class="capa-container">
-            <img src="img/godofwar.jpg" alt="God of War Ragnarök">
-        </div>
-        <h3 class="titulo-jogo">God of War Ragnarök</h3>
-        <div class="avaliacao">
-            <span class="estrela">★</span>
-            <span class="nota">8.5/10</span>
-        </div>
-        <div class="tags">
-            <span class="tag">Ação</span>
-            <span class="tag">Aventura</span>
-        </div>
-    </div>
+    <section class="login-card">
+      <h1>Bem-vindo <span>de volta</span></h1>
+      <p class="login-subtitulo">Entre na sua conta para acessar jogos, rankings e notícias da nossa comunidade.</p>
 
-    <!-- Card 3: GTA V -->
-    <div class="card-jogo">
-        <div class="capa-container">
-            <img src="img/gta.png" alt="GTA V">
-        </div>
-        <h3 class="titulo-jogo">GTA V</h3>
-        <div class="avaliacao">
-            <span class="estrela">★</span>
-            <span class="nota">8.5/10</span>
-        </div>
-        <div class="tags">
-            <span class="tag">Ação</span>
-            <span class="tag">Mundo Aberto</span>
-        </div>
-    </div>
+      <div class="login-alerta" id="formAlert" role="alert"></div>
 
-    <!-- Card 4: The Last of Us -->
-    <div class="card-jogo">
-        <div class="capa-container">
-            <img src="img/thelastofus.png" alt="The Last of Us Part I">
-        </div>
-        <h3 class="titulo-jogo">The Last of Us Part I</h3>
-        <div class="avaliacao">
-            <span class="estrela">★</span>
-            <span class="nota">8.4/10</span>
-        </div>
-        <div class="tags">
-            <span class="tag">Ação</span>
-            <span class="tag">Aventura</span>
-        </div>
-    </div>
-
-    <!-- Card 5: Red Dead 2 -->
-    <div class="card-jogo">
-        <div class="capa-container">
-            <img src="img/rdr.png" alt="Red Dead Redemption 2">
-        </div>
-        <h3 class="titulo-jogo">Red Dead Redemption 2</h3>
-        <div class="avaliacao">
-            <span class="estrela">★</span>
-            <span class="nota">8.3/10</span>
-        </div>
-        <div class="tags">
-            <span class="tag">Ação</span>
-            <span class="tag">Aventura</span>
-        </div>
-    </div>
-</div>
-    </div>
-
-    <footer class="footer-site">
-    <div class="footer-container">
-        <!-- Coluna 1: Logo/Marca -->
-        <div class="footer-coluna sobre">
-            <h2>GAME<span>HUB</span></h2>
-            <p>O seu universo definitivo dos games. Fique por dentro de avaliações, lançamentos e tudo do mundo dos jogos.</p>
-            <div class="redes-sociais">
-                <a href="#" aria-label="Discord">&#128172;</a> <!-- Ícone balão (simbolizando Discord) -->
-                <a href="#" aria-label="YouTube">&#9654;</a>   <!-- Ícone Play (YouTube) -->
-                <a href="#" aria-label="Instagram">&#128247;</a> <!-- Ícone Câmera (Instagram) -->
-            </div>
+      <form id="loginForm" novalidate onsubmit="if (typeof validar !== 'function') { alert('O arquivo login.js não foi carregado. Coloque o login.js na mesma pasta do index.html.'); return false; }">
+        <div class="campo" id="fieldEmail">
+          <label for="email">E-mail</label>
+          <div class="campo-input">
+            <input type="email" id="email" placeholder="seuemail@exemplo.com" autocomplete="email">
+          </div>
+          <div class="msg-erro">Digite um e-mail válido.</div>
         </div>
 
-        <!-- Coluna 2: Links Rápidos -->
-        <div class="footer-coluna">
-            <h3>Navegação</h3>
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Destaques</a></li>
-                <li><a href="#">Categorias</a></li>
-                <li><a href="#">Lançamentos</a></li>
-            </ul>
+        <div class="campo" id="fieldPass">
+          <label for="senha">Senha</label>
+          <div class="campo-input">
+            <input type="password" id="senha" placeholder="Digite sua senha" autocomplete="current-password">
+            <button type="button" class="btn-mostrar-senha" id="togglePass">MOSTRAR</button>
+          </div>
+          <div class="msg-erro">A senha deve ter pelo menos 6 caracteres.</div>
         </div>
 
-        <!-- Coluna 3: Categorias Populares -->
-        <div class="footer-coluna">
-            <h3>Categorias</h3>
-            <ul>
-                <li><a href="#">RPG</a></li>
-                <li><a href="#">Ação e Aventura</a></li>
-                <li><a href="#">Mundo Aberto</a></li>
-                <li><a href="#">Estratégia</a></li>
-            </ul>
+        <div class="login-opcoes">
+          <label class="lembrar"><input type="checkbox" id="lembrar"> Lembrar de mim</label>
+          <a href="#" id="esqueci">Esqueci a senha</a>
         </div>
-    </div>
 
-    <!-- Linha de Direitos Autorais -->
-    <div class="footer-inferior">
-        <p>&copy; 2026 GameHub. Todos os direitos reservados.</p>
-    </div>
-</footer>
-    
+        <button type="submit" class="btn-entrar" id="btnLogin">Entrar</button>
+      </form>
+
+      <p class="login-cadastro">Ainda não tem conta? <a href="#" id="criarConta">Cadastre-se</a></p>
+    </section>
+  </main>
+
+  <footer class="footer-login">&copy; 2026 GameHub. Todos os direitos reservados.</footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
