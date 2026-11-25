@@ -1,53 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAMEHUB</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cloudflare.com">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notícias | GAMEHUB</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<header> 
-    <h1><span>G</span>AME<span>HUB</span></h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">INICIO</a></li>
-            <li><a href="jogos.html">JOGOS</a></li>
-            <li><a href="ranking.html">RANKING</a></li>
-            <li><a href="noticias.html">NOTICIAS</a></li>
-            <li><a href="contato.html">CONTATO</a></li>
-        </ul>
-    </nav>
-    <form action="/buscar" method="GET">
-        <input type="search" name="q" placeholder="Buscar jogos...">
-        <button type="submit">ENTRAR</button>
-    </form>
-</header>
 <body>
-    <div class="text-noticia">
-        <h1>NOTICIAS</h1>
-        <p>Fique por dentro das últimas notícias do mundo dos games, incluindo lançamentos, atualizações e eventos emocionantes.</p>
-    </div>
-    <div class="anuncios">
-        <div class="anuncio-gta">
-            <img src="img/anuncio.jpeg" alt="GTA 6">
-            <h1>Rockstar Confirma GTA IV para 2026</h1>
-            <button type="submit">Saiba Mais &#10142;</button>
+  <header>
+    <a href="logado.html" aria-label="Página inicial"><h1 class="logo"><span>G</span>AME<span>HUB</span></h1></a>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="logado.html">INÍCIO</a></li>
+        <li><a href="jogos.html" >JOGOS</a></li>
+        <li><a href="ranking.html" >RANKING</a></li>
+        <li><a href="noticias.html" class="active" aria-current="page">NOTÍCIAS</a></li>
+        <li><a href="contato.html" >CONTATO</a></li>
+      </ul>
+    </nav>
+    <form class="search-form" action="jogos.html" method="get">
+      <input type="search" name="q" placeholder="Buscar jogos..." aria-label="Buscar jogos">
+      <button type="submit">BUSCAR</button>
+    </form>
+  </header>
+
+  <main>
+
+    <section class="page-heading">
+      <span class="eyebrow">Fique por dentro</span>
+      <h1>Notícias do Mundo Gamer</h1>
+      <p>Lançamentos, atualizações, eventos e novidades da indústria dos games.</p>
+    </section>
+    <section class="grid" aria-label="Notícias">
+      <article class="card news-card">
+        <img src="img/eldering.jpg" alt="Imagem ilustrativa de Elden Ring">
+        <div class="card-content"><span class="news-date">LANÇAMENTOS · 24 NOV 2026</span><h3>Novidades e lançamentos aguardados</h3><p>Acompanhe os principais anúncios e descubra quais aventuras estão chegando ao universo dos games.</p><a class="button" href="#">LER NOTÍCIA</a></div>
+      </article>
+      <article class="card news-card">
+        <img src="img/godofwar.jpg" alt="Imagem ilustrativa de God of War">
+        <div class="card-content"><span class="news-date">ATUALIZAÇÕES · 20 NOV 2026</span><h3>Atualizações que movimentam a comunidade</h3><p>Veja como atualizações, novos modos e conteúdos extras renovam a experiência dos jogadores.</p><a class="button" href="#">LER NOTÍCIA</a></div>
+      </article>
+      <article class="card news-card">
+        <img src="img/gta.png" alt="Imagem ilustrativa de GTA">
+        <div class="card-content"><span class="news-date">COMUNIDADE · 15 NOV 2026</span><h3>Os jogos mais comentados pelos jogadores</h3><p>Confira os títulos que estão gerando conversas e conquistando espaço entre os fãs.</p><a class="button" href="#">LER NOTÍCIA</a></div>
+      </article>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="about">
+        <h2 class="footer-logo">GAME<span>HUB</span></h2>
+        <p>O seu universo definitivo dos games. Fique por dentro de avaliações, lançamentos e tudo do mundo dos jogos.</p>
+        <div class="socials">
+          <a href="#" aria-label="Discord">◉</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="Instagram">◎</a>
         </div>
-        <div class="outros-anuncios">
-            <div class="noticia-1">
-                <img src="img/noticia1.jpeg" alt="Noticia 1">
-                <h1>Elde Ring recebe Live Action</h1>
-                <button type="submit">Saiba Mais &#10142;</button>
-
-            </div>
-            <div class="anuncio-2">
-
-            </div>
-
-        </div>
+      </div>
+      <div>
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="logado.html">Início</a></li>
+          <li><a href="jogos.html">Jogos</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="ranking.html">Ranking</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Categorias</h3>
+        <ul>
+          <li><a href="jogos.html">RPG</a></li>
+          <li><a href="jogos.html">Ação e aventura</a></li>
+          <li><a href="jogos.html">Mundo aberto</a></li>
+          <li><a href="jogos.html">Estratégia</a></li>
+        </ul>
+      </div>
     </div>
-    
+    <div class="footer-bottom">© 2026 GameHub. Todos os direitos reservados.</div>
+  </footer>
 </body>
 </html>

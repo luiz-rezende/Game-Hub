@@ -1,550 +1,200 @@
-/* 1. Seletor Universal (Reseta todos os elementos) */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* GAMEHUB - folha compartilhada inspirada no CSS fornecido */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* 2. Estilização Global da Página */
 body {
-    padding-top: 70px;      /* Mesma altura do seu header */
+  padding-top: 70px;
   font-family: Arial, sans-serif;
-  background-color: #000000;
+  background-color: #000;
+  color: #fff;
   line-height: 1.6;
 }
-/* 3. Estilização do Cabeçalho */
-header{
-    background-color: #000000;
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    height: 70px;
-    position: fixed;        /* Fixa o menu na tela durante a rolagem */
-    top: 0;                 /* Cola no topo absoluto */
-    left: 0;                /* Alinha na lateral esquerda */
-    width: 100%;            /* Garante que o menu ocupe toda a largura da tela */
-    z-index: 9999;          /* Camada ultra alta para passar por cima das fotos e botões */
-    border-bottom: 1px solid #161b22; /* Linha sutil opcional para separar o menu do resto do site */
-}
 
-nav{
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    width: 50%;
-}
+a { color: inherit; text-decoration: none; }
 
-ul{
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    width: 100%;
-}
-
-li{
-    list-style:none;
-    background-color: #000000;
-    color: white;
-}
-
-li a{
-    text-decoration:none;
-    color: white;
-    font-size: 15px;
-}
-
-h1{
-    color:white
-}
-
-span{
-    color:blueviolet;
-}
-
-header input{
-    width: 200px;
-    height: 30px;
-    border-radius: 10px;
-    border: 1px solid #00000007;
-    background-color: #0e1118;
-    padding: 5px;
-}
-
-.input-busca::placeholder {
-  font-family: "Font Awesome 6 Free", Arial, sans-serif; /* Ativa a fonte de ícones */
-  font-weight: 900; /* Obrigatório para o Font Awesome funcionar */
-  color: #999;     /* Cor cinza sutil para a lupa e o texto */
-}
-
-header button{
-    width: 80px;
-    height: 30px;
-    border-radius: 10px;
-    border: 1px solid #00000007;
-    background-color: blueviolet;
-    color:white;
-    cursor:pointer;
-}
-
-/* 4. Estilização do Conteúdo Principal */
-
-.carrossel-container {
-  height: 450px;
-  position: relative; 
+header {
+  background: #000;
   display: flex;
-  
-}
-
-.carrossel-container img {
-  position: absolute;
-  top: 0;
-  left: 0;
+  justify-content: space-around;
+  align-items: center;
+  gap: 18px;
+  min-height: 70px;
+  padding: 8px 3%;
+  position: fixed;
+  top: 0; left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* Faz a imagem cobrir o espaço sem distorcer */
-  z-index: 1;        /* Fica na camada de baixo */
-  object-position: center 30%; 
-
-  -webkit-mask-image: linear-gradient(to top, black 70%, transparent 100%);
-  mask-image: linear-gradient(to top, black 70%, transparent 100%);
-
-  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  z-index: 9999;
+  border-bottom: 1px solid #161b22;
 }
 
-.carrossel-container h1 {
-  position: relative; /* Permite usar o z-index */
-  z-index: 2;        /* Fica na camada de cima, sobre a imagem */
-  color: #ffffff;    /* Altere para a cor que desejar */
-  font-family: sans-serif;
-  margin-top:100px;
-  margin-left: 100px;
-  font-size: 40px;
+.logo { color: #fff; font-size: 26px; white-space: nowrap; }
+.logo span, span { color: blueviolet; }
+
+header nav { display: flex; justify-content: space-around; align-items: center; width: 48%; }
+header nav ul { display: flex; justify-content: space-around; align-items: center; width: 100%; gap: 12px; }
+header nav li { list-style: none; background: #000; color: #fff; }
+header nav li a { color: #fff; font-size: 15px; transition: color .2s; }
+header nav li a:hover, header nav li a.active { color: blueviolet; }
+
+.search-form { display: flex; align-items: center; gap: 7px; }
+header input {
+  width: 200px; height: 30px; border-radius: 10px;
+  border: 1px solid #161b22; background: #0e1118; color: #fff; padding: 5px 9px;
 }
-
-.carrossel-container span {
-  position: relative; /* Permite usar o z-index */
-  z-index: 2;        /* Fica na camada de cima, sobre a imagem */
-  color: blueviolet;    /* Altere para a cor que desejar */
-  font-family: sans-serif;
-  margin-top:60px;
-  margin-left: 100px;
-  font-size: 50px;
-  font-weight: bold;
-
+header input::placeholder { color: #999; }
+header button, button, .button {
+  border-radius: 8px; border: 0; background: blueviolet; color: #fff;
+  cursor: pointer; font-weight: bold; transition: transform .3s, box-shadow .3s;
 }
+header button { width: 80px; height: 30px; }
+button:hover, .button:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgb(98 48 146 / 65%); }
 
-.carrossel-container p {
-  position: relative; /* Permite usar o z-index */
-  z-index: 2;        /* Fica na camada de cima, sobre a imagem */
-  color: rgb(255, 255, 255);    /* Altere para a cor que desejar */
-  font-family: sans-serif;
-  margin-left: 100px;
+main { width: min(1150px, 92%); margin: 0 auto; padding: 45px 0 65px; min-height: 65vh; }
+.page-heading { margin: 20px 0 30px; max-width: 760px; }
+.eyebrow { color: blueviolet; font-size: 13px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
+.page-heading h1 { color: #fff; font-size: clamp(30px, 4vw, 42px); margin: 7px 0 10px; }
+.page-heading p, .muted, .empty-note { color: #8b949e; }
+.section-title { display: flex; justify-content: space-between; align-items: center; gap: 15px; margin: 30px 0 18px; }
+.section-title h2 { color: #fff; font-size: 24px; }
 
+.toolbar { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0 25px; }
+.toolbar select, input, textarea {
+  background: #0e1118; color: #fff; border: 1px solid #161b22; border-radius: 8px; padding: 10px;
 }
+.toolbar select { min-width: 180px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; }
 
-.carrossel-text{
-    height: 100%;
-    width: 30%;
+.card {
+  background: #0b0e14; border: 1px solid #161b22; border-radius: 12px;
+  overflow: hidden; display: flex; flex-direction: column;
+  transition: transform .25s, border-color .25s;
 }
+.card:hover { transform: translateY(-4px); border-color: blueviolet; }
+.card > img { display: block; width: 100%; height: 210px; object-fit: cover; }
+.card-content { padding: 15px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; flex: 1; }
+.card h3 { color: #fff; font-size: 17px; }
+.card p { color: #8b949e; font-size: 14px; }
+.tag { display: inline-block; background: #161b22; color: #b9a0d8; font-size: 11px; padding: 4px 8px; border-radius: 4px; margin: 2px 4px 0 0; }
+.rating { color: #ff9900; font-size: 13px; font-weight: bold; }
+.news-card { display: grid; grid-template-columns: 40% 60%; }
+.news-card > img { height: 100%; min-height: 210px; }
+.news-card .card-content { justify-content: center; }
+.news-date { color: blueviolet; font-size: 12px; font-weight: bold; }
 
-.carrossel-container button { 
-  position: relative; /* Permite usar o z-index */
-  z-index: 2;        /* Fica na camada de cima, sobre a imagem */
-  background-color: blueviolet;    /* Altere para a cor que desejar */
-  font-family: sans-serif;
-  color: white;
-  margin-top: 20px;
-  height: 50px;
-  width: 200px;
-  border-radius: 5px;
-  border: none;
-  font-size: 15px;
-  margin-left: 100px;
-  font-weight: bold;
-  cursor: pointer; /* Dica: adiciona a mãozinha do mouse ao passar por cima */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.table-wrap { overflow-x: auto; background: #0b0e14; border: 1px solid #161b22; border-radius: 12px; }
+table { width: 100%; border-collapse: collapse; min-width: 550px; }
+th, td { padding: 16px 18px; text-align: left; border-bottom: 1px solid #161b22; }
+th { color: blueviolet; background: #0e1118; font-size: 13px; }
+tr:last-child td { border-bottom: 0; }
+.position { color: blueviolet; font-weight: bold; }
+.player { display: flex; align-items: center; gap: 10px; font-weight: bold; }
+.avatar { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: #282033; color: #fff; }
+
+.contact-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 22px; align-items: start; }
+.info-panel, .form-panel { background: #0b0e14; border: 1px solid #161b22; border-radius: 12px; padding: 24px; }
+.info-item { padding: 14px 0; border-bottom: 1px solid #161b22; }
+.info-item:last-child { border: 0; }
+.info-item strong { display: block; color: blueviolet; margin-bottom: 4px; }
+.contact-form { display: grid; gap: 14px; }
+.contact-form label { display: grid; gap: 6px; color: #fff; font-size: 13px; font-weight: bold; }
+.contact-form input, .contact-form textarea { width: 100%; font: inherit; }
+.contact-form textarea { min-height: 140px; resize: vertical; }
+.contact-form button { padding: 13px 18px; }
+.form-message { color: #a78bfa; min-height: 22px; margin-top: 5px; }
+
+footer, .footer-site {
+  background: #000; border-top: 1px solid #161b22; color: #8b949e;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px 20px 20px; margin-top: 45px;
 }
-
-/* ALTERADO AQUI: Agora o seletor aponta exatamente para o mesmo botão */
-.carrossel-container button:hover {
-    /* Move o botão 5 pixels para cima no eixo Y */
-    transform: translateY(-5px); 
-    
-    /* Adiciona uma sombra para dar efeito de profundidade/altura */
-    box-shadow: 0 10px 20px rgb(98, 48, 146); 
-}
-
-
-
-.nav{
-    display:flex;
-    justify-content:space-between;
-    width: 100%;
-    height: 50px;
-}
-
-.nav h2 {
-    color: #ffffff;
-    font-size: 24px;
-    margin-left: 40px;
-}
-
-.nav button {
-    background-color: #0e1118;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-right: 40px;
-}
-
-
-.jogos-destaque {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha se necessário */
-    padding: 20px;
-    gap: 20px; /* Espaçamento entre os itens */
-}
-
-/* Container principal que segura todos os cards */
-.jogos-destaque {
-    display: flex;
-    gap: 16px; /* Espaçamento exato entre cada card */
-    background-color: #000000; /* Fundo escuro do site de jogos */
-    padding: 24px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    justify-content: center;
-    flex-wrap: wrap; /* Permite quebrar a linha se a tela for pequena */
-}
-
-/* Estrutura individual de cada card */
-.card-jogo {
-    background-color: #0b0e14; /* Fundo cinza escuro do card */
-    border: 1px solid #161b22; /* Borda sutil do card */
-    border-radius: 12px;       /* Bordas bem arredondadas como na imagem */
-    width: 210px;              /* Largura ideal baseada na proporção */
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;                  /* Espaçamento vertical interno uniforme */
-}
-
-/* Container que segura as imagens dos jogos */
-.card-jogo .capa-container {
-    width: 100%;
-    height: 260px;
-    border-radius: 8px;        /* Bordas arredondadas da própria foto */
-    overflow: hidden;
-}
-
-.card-jogo .capa-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;         /* Encaixa a imagem sem distorcer */
-}
-
-/* Estilização do título do jogo */
-.card-jogo .titulo-jogo {
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 600;
-    margin: 4px 0 0 0;
-    white-space: nowrap;       /* Evita que o texto quebre linhas estranhas */
-    overflow: hidden;
-    text-overflow: ellipsis;   /* Adiciona os "..." se o nome for gigante */
-}
-
-/* Seção de avaliação (Estrela + Nota) */
-.card-jogo .avaliacao {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.card-jogo .avaliacao .estrela {
-    color: #ff9900;            /* Cor laranja idêntica à estrela da foto */
-    font-size: 12px;
-}
-
-.card-jogo .avaliacao .nota {
-    color: #8b949e;            /* Cor cinza do texto da nota */
-    font-size: 12px;
-    font-weight: 500;
-}
-
-/* Área que envelopa as tags de gênero */
-.card-jogo .tags {
-    display: flex;
-    gap: 6px;
-    margin-top: auto;          /* Empurra as tags sempre para o fundo do card */
-}
-
-/* Estilo de cada tag individual */
-.card-jogo .tag {
-    background-color: #161b22; /* Fundo escuro leve das tags */
-    color: #8b949e;            /* Texto cinza claro */
-    font-size: 11px;
-    padding: 4px 8px;
-    border-radius: 4px;        /* Bordas das tags ligeiramente arredondadas */
-    font-weight: 500;
-}
-
-.footer-site {
-    background-color: #000000; /* Mesmo cinza escuro dos seus cards */
-    border-top: 1px solid #161b22; /* Borda superior sutil */
-    color: #8b949e; /* Texto cinza claro */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 40px 20px 20px 20px;
-    margin-top: 50px; /* Garante um espaçamento da seção de cima */
-}
-
-/* Alinhamento das colunas em linha */
 .footer-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; /* Quebra linha em telas menores (celulares) */
-    gap: 30px;
+  max-width: 1100px; margin: 0 auto; display: flex;
+  justify-content: space-between; flex-wrap: wrap; gap: 30px;
+}
+.footer-container > div { flex: 1; min-width: 200px; }
+.footer-logo { color: #fff; font-size: 22px; margin-bottom: 15px; }
+.footer-logo span { color: blueviolet; }
+.footer-container p, .footer-container li { color: #8b949e; font-size: 14px; }
+.footer-container ul { list-style: none; padding: 0; }
+.footer-container li { margin: 0 0 12px; }
+.footer-container h3 { color: #fff; font-size: 16px; margin-bottom: 20px; }
+.footer-container a:hover { color: blueviolet; }
+.socials { display: flex; gap: 15px; margin-top: 15px; }
+.socials a { color: #fff; font-size: 20px; }
+.footer-bottom, .footer-inferior {
+  max-width: 1100px; margin: 40px auto 0; padding-top: 20px;
+  border-top: 1px solid #161b22; text-align: center; font-size: 12px; color: #8b949e;
 }
 
-/* Configuração de cada coluna individual */
-.footer-coluna {
-    flex: 1;
-    min-width: 200px; /* Impede que fiquem esmagadas */
+@media (max-width: 850px) {
+  header { justify-content: center; flex-wrap: wrap; height: auto; padding: 10px 3%; }
+  body { padding-top: 125px; }
+  header nav { width: 100%; }
+  header nav ul { flex-wrap: wrap; gap: 12px; }
+  .search-form { justify-content: center; }
+  .contact-layout { grid-template-columns: 1fr; }
 }
-
-/* Estilo específico da primeira coluna (Sobre) */
-.footer-coluna.sobre h2 {
-    color: #ffffff;
-    font-size: 22px;
-    margin-bottom: 15px;
+@media (max-width: 560px) {
+  .news-card { grid-template-columns: 1fr; }
+  .news-card > img { height: 190px; min-height: 0; }
+  .footer-container { flex-direction: column; }
+  .page-heading h1 { font-size: 30px; }
 }
-
-.footer-coluna.sobre h2 span {
-    color: blueviolet; /* Usa o mesmo roxo do seu botão */
-}
-
-.footer-coluna.sobre p {
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-/* Estilo dos títulos das outras colunas */
-.footer-coluna h3 {
-    color: #ffffff;
-    font-size: 16px;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-/* Listas de links */
-.footer-coluna ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-coluna ul li {
-    margin-bottom: 12px;
-}
-
-.footer-coluna ul li a {
-    color: #8b949e;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.2s ease;
-}
-
-/* Efeito ao passar o mouse nos links */
-.footer-coluna ul li a:hover {
-    color: blueviolet; /* Destaca com o roxo do seu tema */
-}
-
-/* Bloco das redes sociais */
-.redes-sociais {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.redes-sociais a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 20px;
-    transition: transform 0.2s ease;
-}
-
-.redes-sociais a:hover {
-    transform: translateY(-3px); /* Leve subida ao passar o mouse */
-}
-
-/* Faixa de direitos autorais no fundo */
-.footer-inferior {
-    max-width: 1100px;
-    margin: 40px auto 0 auto;
-    padding-top: 20px;
-    border-top: 1px solid #161b22;
-    text-align: center;
-    font-size: 12px;
-}
-
-
-
-
-/* Estilização da seção de notícias */
-
-.text-noticia {
-    color: #ffffff;  
-    margin-top: 40px;
-    margin-left: 70px;     
-    height: 130px;
-    width: 40%;                
-}
-
-.anuncios {
-    display: flex;
-    justify-content: space-between;
-}
-
-.anuncio-gta {
-    color: #ffffff;  
-    margin-left: 70px;     
-    height: 400px;
-    width: 45%;
-    position: relative;
-    display: grid;
-    grid-template-areas: "sobrepor"; /* Define uma área única de empilhamento */
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-
-.anuncio-gta img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; /* Faz a imagem cobrir o espaço sem distorcer */ 
-    border-radius: 10px; 
-    z-index: 1; /* Fica na camada de baixo */ 
-    grid-area: sobrepor;
-} 
-
-.anuncio-gta h1 { 
-    grid-area: sobrepor;
-    margin-top: 250px;
-    width: 40%;
-    margin-left: 30px;
-    color: #ffffff; 
-    font-size: 30px; 
-    position: relative; /* Permite usar o z-index */ 
-    z-index: 2; 
-}
-
-.anuncio-gta button{
-    grid-area: sobrepor;
-    margin-top: 330px;
-    width: 155px;
-    height: 50px;
-    color: blueviolet;
-    background: transparent;
-    border-radius: 5px;
-    border: none;
-    font-size: 15px;
-    position: relative; /* Permite usar o z-index */ 
-    z-index: 2;
-
-}
-
-.outros-anuncios{
-    border: 1px solid pink;
-    display: flex;
-    color: #ffffff;  
-    justify-content: space-between;    
-    height: 400px;
-    width: 40%;
-    margin-right: 70px;
-    flex-direction: column;
-}
-
-.anuncio-1{
-    border: 1px solid #fc0000;
-    height: 45%;
-    width: 100%;
-}
-
-.anuncio-2{
-    border: 1px solid #18c438;
-    height: 45%;
-    width: 100%;
-}
-
 
 /* =========================================================
-   5. PÁGINA DE LOGIN (index.html)
-   Tudo escopado em .pagina-login para não afetar a home
+   PÁGINA DE LOGIN (index.html)
    ========================================================= */
-
 .pagina-login {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Cabeçalho do login: só a logo, alinhada à esquerda */
 .pagina-login header {
-    justify-content: flex-start;
-    padding: 0 48px;
+  justify-content: flex-start;
+  padding: 8px 48px;
 }
 
 .pagina-login .logo {
-    font-size: 32px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-decoration: none;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
-.pagina-login .logo .p { color: blueviolet; }
-.pagina-login .logo .w { color: #ffffff; }
-
-/* Área central com fundo roxo neon */
-.login-main {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    position: relative;
-    overflow: hidden;
-    background:
-        radial-gradient(ellipse at 75% 30%, rgba(138, 43, 226, .35), transparent 55%),
-        radial-gradient(ellipse at 20% 80%, rgba(90, 20, 160, .25), transparent 50%),
-        #000000;
+.pagina-login main.login-main {
+  width: 100%;
+  max-width: none;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 75% 30%, rgba(138, 43, 226, 0.35), transparent 55%),
+    radial-gradient(ellipse at 20% 80%, rgba(90, 20, 160, 0.25), transparent 50%),
+    #000;
 }
 
-/* Silhueta de prédios neon ao fundo */
 .skyline {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 55%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-around;
-    opacity: .35;
-    pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  opacity: 0.35;
+  pointer-events: none;
 }
 
 .skyline i {
-    display: block;
-    width: 5%;
-    background: linear-gradient(to top, #000000, rgba(138, 43, 226, .55));
-    border-top: 2px solid rgba(168, 85, 247, .8);
-    box-shadow: 0 0 25px rgba(138, 43, 226, .5);
+  display: block;
+  width: 5%;
+  background: linear-gradient(to top, #000, rgba(138, 43, 226, 0.55));
+  border-top: 2px solid rgba(168, 85, 247, 0.8);
+  box-shadow: 0 0 25px rgba(138, 43, 226, 0.5);
 }
 
 .skyline i:nth-child(1) { height: 45%; }
@@ -557,186 +207,312 @@ header button{
 .skyline i:nth-child(8) { height: 75%; }
 .skyline i:nth-child(9) { height: 40%; }
 
-/* Card do formulário (mesmo estilo dos .card-jogo) */
 .login-card {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 420px;
-    background-color: rgba(11, 14, 20, .92);
-    border: 1px solid #161b22;
-    border-radius: 12px;
-    padding: 38px 34px;
-    box-shadow: 0 0 60px rgba(138, 43, 226, .2);
-    backdrop-filter: blur(6px);
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  background-color: rgba(11, 14, 20, 0.92);
+  border: 1px solid #161b22;
+  border-radius: 12px;
+  padding: 38px 34px;
+  box-shadow: 0 0 60px rgba(138, 43, 226, 0.2);
+  backdrop-filter: blur(6px);
 }
 
 .login-card h1 {
-    font-size: 26px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
+  font-size: 26px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
 }
 
-.login-card h1 span { color: blueviolet; }
-
 .login-subtitulo {
-    color: #8b949e;
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 26px;
+  color: #8b949e;
+  font-size: 14px;
+  margin-bottom: 26px;
 }
 
 .campo { margin-bottom: 18px; }
 
 .campo label {
-    display: block;
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-    margin-bottom: 7px;
+  display: block;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 7px;
 }
 
 .campo-input { position: relative; }
 
 .campo-input input {
-    width: 100%;
-    background-color: #0e1118;
-    border: 1px solid #161b22;
-    border-radius: 8px;
-    padding: 13px 14px;
-    color: #ffffff;
-    font-size: 15px;
-    outline: none;
-    transition: border-color .2s, box-shadow .2s;
+  width: 100%;
+  padding: 13px 14px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .campo-input input::placeholder { color: #5c5d6e; }
 
 .campo-input input:focus {
-    border-color: blueviolet;
-    box-shadow: 0 0 0 3px rgba(138, 43, 226, .25);
+  border-color: blueviolet;
+  box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.25);
 }
 
 .campo.invalido .campo-input input { border-color: #ff4d6d; }
 
 .btn-mostrar-senha {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: #8b949e;
-    font-size: 12px;
-    font-weight: 700;
-    cursor: pointer;
-    padding: 4px 6px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  color: #8b949e;
+  font-size: 12px;
+  padding: 4px 6px;
 }
 
-.btn-mostrar-senha:hover { color: #ffffff; }
+.btn-mostrar-senha:hover {
+  color: #fff;
+  transform: translateY(-50%);
+  box-shadow: none;
+}
 
 .msg-erro {
-    display: none;
-    color: #ff4d6d;
-    font-size: 12px;
-    margin-top: 6px;
+  display: none;
+  color: #ff4d6d;
+  font-size: 12px;
+  margin-top: 6px;
 }
 
 .campo.invalido .msg-erro { display: block; }
 
 .login-opcoes {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 13px;
-    margin-bottom: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 22px;
 }
 
 .lembrar {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #8b949e;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8b949e;
+  cursor: pointer;
 }
 
 .lembrar input {
-    accent-color: blueviolet;
-    width: 15px;
-    height: 15px;
+  accent-color: blueviolet;
+  width: 15px;
+  height: 15px;
 }
 
-.login-card a {
-    color: #a855f7;
-    text-decoration: none;
-}
-
+.login-card a { color: #a855f7; }
 .login-card a:hover { text-decoration: underline; }
 
-/* Botão ENTRAR (mesmo efeito do botão EXPLORAR JOGOS) */
 .btn-entrar {
-    width: 100%;
-    background-color: blueviolet;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    padding: 14px;
-    font-size: 15px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-entrar:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgb(98, 48, 146);
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  text-transform: uppercase;
 }
 
 .btn-entrar:disabled {
-    opacity: .6;
-    cursor: wait;
-    transform: none;
-    box-shadow: none;
+  opacity: 0.6;
+  cursor: wait;
+  transform: none;
+  box-shadow: none;
 }
 
-/* Aviso geral de erro do formulário */
 .login-alerta {
-    display: none;
-    background-color: rgba(255, 77, 109, .1);
-    border: 1px solid #ff4d6d;
-    color: #ff4d6d;
-    border-radius: 8px;
-    padding: 10px 12px;
-    font-size: 13px;
-    margin-bottom: 18px;
+  display: none;
+  background-color: rgba(255, 77, 109, 0.1);
+  border: 1px solid #ff4d6d;
+  color: #ff4d6d;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  margin-bottom: 18px;
 }
 
 .login-alerta.show { display: block; }
 
 .login-cadastro {
-    text-align: center;
-    margin-top: 22px;
-    font-size: 14px;
-    color: #8b949e;
+  text-align: center;
+  margin-top: 22px;
+  font-size: 14px;
+  color: #8b949e;
 }
 
-/* Rodapé do login */
 .footer-login {
-    background-color: #000000;
-    border-top: 1px solid #161b22;
-    color: #8b949e;
-    font-size: 12px;
-    text-align: center;
-    padding: 16px;
-    position: relative;
-    z-index: 2;
+  margin-top: 0;
+  padding: 16px;
+  text-align: center;
+  font-size: 12px;
+  position: relative;
+  z-index: 2;
 }
 
 @media (max-width: 520px) {
-    .pagina-login header { padding: 0 20px; }
-    .pagina-login .logo { font-size: 26px; }
-    .login-card { padding: 28px 22px; }
+  .pagina-login header { padding: 10px 20px; }
+  .login-card { padding: 28px 22px; }
+}
+
+/* =========================================================
+   PÁGINA INICIAL (logado.html)
+   ========================================================= */
+.carrossel-container {
+  height: 450px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 6%;
+  overflow: hidden;
+}
+
+.carrossel-container img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.carrossel-text {
+  position: relative;
+  z-index: 2;
+  max-width: 480px;
+}
+
+.carrossel-text h1 {
+  color: #fff;
+  font-size: 40px;
+  line-height: 1.1;
+}
+
+.carrossel-text span {
+  display: block;
+  color: blueviolet;
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+
+.carrossel-text p {
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 22px;
+}
+
+.carrossel-text .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  font-size: 15px;
+}
+
+.section-title .button {
+  padding: 10px 18px;
+  font-size: 13px;
+  background-color: #0e1118;
+  border: 1px solid #161b22;
+}
+
+.section-title .button:hover {
+  border-color: blueviolet;
+}
+
+.jogos-destaque {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card-jogo {
+  background-color: #0b0e14;
+  border: 1px solid #161b22;
+  border-radius: 12px;
+  width: 210px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.card-jogo:hover {
+  transform: translateY(-4px);
+  border-color: blueviolet;
+}
+
+.card-jogo .capa-container {
+  width: 100%;
+  height: 260px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card-jogo .capa-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-jogo .titulo-jogo {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-jogo .avaliacao {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-jogo .avaliacao .estrela {
+  color: #ff9900;
+  font-size: 12px;
+}
+
+.card-jogo .avaliacao .nota {
+  color: #8b949e;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.card-jogo .tags {
+  display: flex;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.card-jogo .tag {
+  background-color: #161b22;
+  color: #8b949e;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .carrossel-container { height: auto; padding: 50px 6%; }
+  .carrossel-text h1 { font-size: 30px; }
+  .carrossel-text span { font-size: 36px; }
 }

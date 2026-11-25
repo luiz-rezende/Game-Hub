@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato | GAMEHUB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="logado.html" aria-label="Página inicial"><h1 class="logo"><span>G</span>AME<span>HUB</span></h1></a>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="logado.html">INÍCIO</a></li>
+        <li><a href="jogos.html" >JOGOS</a></li>
+        <li><a href="ranking.html" >RANKING</a></li>
+        <li><a href="noticias.html" >NOTÍCIAS</a></li>
+        <li><a href="contato.html" class="active" aria-current="page">CONTATO</a></li>
+      </ul>
+    </nav>
+    <form class="search-form" action="jogos.html" method="get">
+      <input type="search" name="q" placeholder="Buscar jogos..." aria-label="Buscar jogos">
+      <button type="submit">BUSCAR</button>
+    </form>
+  </header>
+
+  <main>
+
+    <section class="page-heading">
+      <span class="eyebrow">Fale com a equipe</span>
+      <h1>Entre em Contato</h1>
+      <p>Tem alguma dúvida, sugestão ou encontrou algum problema? Envie uma mensagem para o GameHub.</p>
+    </section>
+    <section class="contact-layout">
+      <aside class="info-panel">
+        <h2>Informações</h2>
+        <p class="muted">Utilize os canais abaixo ou envie sua mensagem pelo formulário.</p>
+        <div class="info-item"><strong>E-mail</strong><span class="muted">contato@gamehub.com</span></div>
+        <div class="info-item"><strong>Comunidade</strong><span class="muted">Participe das nossas redes sociais.</span></div>
+        <div class="info-item"><strong>Atendimento</strong><span class="muted">Segunda a sexta, em horário comercial.</span></div>
+      </aside>
+      <div class="form-panel">
+        <h2>Envie sua mensagem</h2>
+        <form class="contact-form" id="contactForm">
+          <label for="nome">Nome<input id="nome" name="nome" type="text" placeholder="Seu nome" required></label>
+          <label for="email">E-mail<input id="email" name="email" type="email" placeholder="seuemail@exemplo.com" required></label>
+          <label for="assunto">Assunto<input id="assunto" name="assunto" type="text" placeholder="Sobre o que deseja falar?" required></label>
+          <label for="mensagem">Mensagem<textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem..." required></textarea></label>
+          <button type="submit">ENVIAR MENSAGEM</button>
+          <p class="form-message" id="formMessage" role="status"></p>
+        </form>
+      </div>
+    </section>
+    <script>
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        document.getElementById('formMessage').textContent =
+          'Mensagem validada! Este formulário é demonstrativo e ainda não envia dados para um servidor.';
+        this.reset();
+      });
+    </script>
+
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="about">
+        <h2 class="footer-logo">GAME<span>HUB</span></h2>
+        <p>O seu universo definitivo dos games. Fique por dentro de avaliações, lançamentos e tudo do mundo dos jogos.</p>
+        <div class="socials">
+          <a href="#" aria-label="Discord">◉</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="Instagram">◎</a>
+        </div>
+      </div>
+      <div>
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="logado.html">Início</a></li>
+          <li><a href="jogos.html">Jogos</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="ranking.html">Ranking</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Categorias</h3>
+        <ul>
+          <li><a href="jogos.html">RPG</a></li>
+          <li><a href="jogos.html">Ação e aventura</a></li>
+          <li><a href="jogos.html">Mundo aberto</a></li>
+          <li><a href="jogos.html">Estratégia</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 GameHub. Todos os direitos reservados.</div>
+  </footer>
+</body>
+</html>

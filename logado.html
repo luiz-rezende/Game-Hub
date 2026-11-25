@@ -1,172 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAMEHUB</title>
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início | GAMEHUB</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<header> 
-    <h1><span>G</span>AME<span>HUB</span></h1>
-    <nav>
-        <ul>
-            <li><a href="logado.html">INICIO</a></li>
-            <li><a href="jogos.html">JOGOS</a></li>
-            <li><a href="ranking.html">RANKING</a></li>
-            <li><a href="noticias.html">NOTICIAS</a></li>
-            <li><a href="contato.html">CONTATO</a></li>
-        </ul>
-    </nav>
-    <form action="/buscar" method="GET">
-        <input type="search" name="q" placeholder="Buscar jogos...">
-        <button type="submit">ENTRAR</button>
-    </form>
-</header>
 <body>
-    <div class="carrossel-container">
-        <img src="img/gamehub-hero.jpg" alt="#">
-        <div class="carrossel-text">
-            <h1>O UNIVERSO</h1>
-            <span>DOS GAMES</span> 
-            <p>
-                Descubra o universo dos games e explore uma variedade de jogos emocionantes,
-                notícias atualizadas e rankings competitivos. Junte-se à nossa
-                comunidade de jogadores e mergulhe na diversão!
-            </p> 
-           
-            <button type="submit"> EXPLORAR JOGOS &#10142;</button>
-        </div>
+  <header>
+    <a href="logado.html" aria-label="Página inicial"><h1 class="logo"><span>G</span>AME<span>HUB</span></h1></a>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="logado.html" class="active" aria-current="page">INÍCIO</a></li>
+        <li><a href="jogos.html">JOGOS</a></li>
+        <li><a href="ranking.html">RANKING</a></li>
+        <li><a href="noticias.html">NOTÍCIAS</a></li>
+        <li><a href="contato.html">CONTATO</a></li>
+      </ul>
+    </nav>
+    <form class="search-form" action="jogos.html" method="get">
+      <input type="search" name="q" placeholder="Buscar jogos..." aria-label="Buscar jogos">
+      <button type="submit">BUSCAR</button>
+    </form>
+  </header>
+
+  <section class="carrossel-container">
+    <img src="img/gamehub-hero.jpg" alt="Banner principal GameHub">
+    <div class="carrossel-text">
+      <h1>O UNIVERSO</h1>
+      <span>DOS GAMES</span>
+      <p>
+        Descubra o universo dos games e explore uma variedade de jogos emocionantes,
+        notícias atualizadas e rankings competitivos. Junte-se à nossa
+        comunidade de jogadores e mergulhe na diversão!
+      </p>
+      <a href="jogos.html" class="button">EXPLORAR JOGOS &#10142;</a>
     </div>
-    <div class="container">
-        <nav class="nav">
-            <h2>JOGOS EM DESTAQUE</h2>
-            <button type="submit">VER TODOS &#10142;</button>
-        </nav>
-       <div class="jogos-destaque">
-    <!-- Card 1: Elden Ring -->
-    <div class="card-jogo">
+  </section>
+
+  <main>
+    <div class="section-title">
+      <h2>JOGOS EM DESTAQUE</h2>
+      <a href="jogos.html" class="button">VER TODOS &#10142;</a>
+    </div>
+
+    <div class="jogos-destaque">
+      <article class="card-jogo">
         <div class="capa-container">
-            <img src="img/eldering.jpg" alt="Elden Ring">
+          <img src="img/eldering.jpg" alt="Capa de Elden Ring">
         </div>
         <h3 class="titulo-jogo">Elden Ring</h3>
         <div class="avaliacao">
-            <span class="estrela">★</span>
-            <span class="nota">8.8/10</span>
+          <span class="estrela">★</span>
+          <span class="nota">8.8/10</span>
         </div>
         <div class="tags">
-            <span class="tag">RPG</span>
-            <span class="tag">Aventura</span>
+          <span class="tag">RPG</span>
+          <span class="tag">Aventura</span>
         </div>
-    </div>
+      </article>
 
-    <!-- Card 2: God of War -->
-    <div class="card-jogo">
+      <article class="card-jogo">
         <div class="capa-container">
-            <img src="img/godofwar.jpg" alt="God of War Ragnarök">
+          <img src="img/godofwar.jpg" alt="Capa de God of War Ragnarök">
         </div>
         <h3 class="titulo-jogo">God of War Ragnarök</h3>
         <div class="avaliacao">
-            <span class="estrela">★</span>
-            <span class="nota">8.5/10</span>
+          <span class="estrela">★</span>
+          <span class="nota">8.5/10</span>
         </div>
         <div class="tags">
-            <span class="tag">Ação</span>
-            <span class="tag">Aventura</span>
+          <span class="tag">Ação</span>
+          <span class="tag">Aventura</span>
         </div>
-    </div>
+      </article>
 
-    <!-- Card 3: GTA V -->
-    <div class="card-jogo">
+      <article class="card-jogo">
         <div class="capa-container">
-            <img src="img/gta.png" alt="GTA V">
+          <img src="img/gta.png" alt="Capa de GTA V">
         </div>
         <h3 class="titulo-jogo">GTA V</h3>
         <div class="avaliacao">
-            <span class="estrela">★</span>
-            <span class="nota">8.5/10</span>
+          <span class="estrela">★</span>
+          <span class="nota">8.5/10</span>
         </div>
         <div class="tags">
-            <span class="tag">Ação</span>
-            <span class="tag">Mundo Aberto</span>
+          <span class="tag">Ação</span>
+          <span class="tag">Mundo Aberto</span>
         </div>
-    </div>
+      </article>
 
-    <!-- Card 4: The Last of Us -->
-    <div class="card-jogo">
+      <article class="card-jogo">
         <div class="capa-container">
-            <img src="img/thelastofus.png" alt="The Last of Us Part I">
+          <img src="img/thelastofus.png" alt="Capa de The Last of Us Part I">
         </div>
         <h3 class="titulo-jogo">The Last of Us Part I</h3>
         <div class="avaliacao">
-            <span class="estrela">★</span>
-            <span class="nota">8.4/10</span>
+          <span class="estrela">★</span>
+          <span class="nota">8.4/10</span>
         </div>
         <div class="tags">
-            <span class="tag">Ação</span>
-            <span class="tag">Aventura</span>
+          <span class="tag">Ação</span>
+          <span class="tag">Aventura</span>
         </div>
-    </div>
+      </article>
 
-    <!-- Card 5: Red Dead 2 -->
-    <div class="card-jogo">
+      <article class="card-jogo">
         <div class="capa-container">
-            <img src="img/rdr.png" alt="Red Dead Redemption 2">
+          <img src="img/rdr.png" alt="Capa de Red Dead Redemption 2">
         </div>
         <h3 class="titulo-jogo">Red Dead Redemption 2</h3>
         <div class="avaliacao">
-            <span class="estrela">★</span>
-            <span class="nota">8.3/10</span>
+          <span class="estrela">★</span>
+          <span class="nota">8.3/10</span>
         </div>
         <div class="tags">
-            <span class="tag">Ação</span>
-            <span class="tag">Aventura</span>
+          <span class="tag">Ação</span>
+          <span class="tag">Aventura</span>
         </div>
+      </article>
     </div>
-</div>
-    </div>
+  </main>
 
-    <footer class="footer-site">
+  <footer>
     <div class="footer-container">
-        <!-- Coluna 1: Logo/Marca -->
-        <div class="footer-coluna sobre">
-            <h2>GAME<span>HUB</span></h2>
-            <p>O seu universo definitivo dos games. Fique por dentro de avaliações, lançamentos e tudo do mundo dos jogos.</p>
-            <div class="redes-sociais">
-                <a href="#" aria-label="Discord">&#128172;</a> <!-- Ícone balão (simbolizando Discord) -->
-                <a href="#" aria-label="YouTube">&#9654;</a>   <!-- Ícone Play (YouTube) -->
-                <a href="#" aria-label="Instagram">&#128247;</a> <!-- Ícone Câmera (Instagram) -->
-            </div>
+      <div class="about">
+        <h2 class="footer-logo">GAME<span>HUB</span></h2>
+        <p>O seu universo definitivo dos games. Fique por dentro de avaliações, lançamentos e tudo do mundo dos jogos.</p>
+        <div class="socials">
+          <a href="#" aria-label="Discord">◉</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="Instagram">◎</a>
         </div>
-
-        <!-- Coluna 2: Links Rápidos -->
-        <div class="footer-coluna">
-            <h3>Navegação</h3>
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Destaques</a></li>
-                <li><a href="#">Categorias</a></li>
-                <li><a href="#">Lançamentos</a></li>
-            </ul>
-        </div>
-
-        <!-- Coluna 3: Categorias Populares -->
-        <div class="footer-coluna">
-            <h3>Categorias</h3>
-            <ul>
-                <li><a href="#">RPG</a></li>
-                <li><a href="#">Ação e Aventura</a></li>
-                <li><a href="#">Mundo Aberto</a></li>
-                <li><a href="#">Estratégia</a></li>
-            </ul>
-        </div>
+      </div>
+      <div>
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="logado.html">Início</a></li>
+          <li><a href="jogos.html">Jogos</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="ranking.html">Ranking</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Categorias</h3>
+        <ul>
+          <li><a href="jogos.html">RPG</a></li>
+          <li><a href="jogos.html">Ação e aventura</a></li>
+          <li><a href="jogos.html">Mundo aberto</a></li>
+          <li><a href="jogos.html">Estratégia</a></li>
+        </ul>
+      </div>
     </div>
-
-    <!-- Linha de Direitos Autorais -->
-    <div class="footer-inferior">
-        <p>&copy; 2026 GameHub. Todos os direitos reservados.</p>
-    </div>
-</footer>
-    
+    <div class="footer-bottom">© 2026 GameHub. Todos os direitos reservados.</div>
+  </footer>
 </body>
 </html>
