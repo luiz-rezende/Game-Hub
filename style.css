@@ -516,3 +516,13 @@ footer, .footer-site {
   .carrossel-text h1 { font-size: 30px; }
   .carrossel-text span { font-size: 36px; }
 }
+
+/* =========================================================
+   PÁGINA DE JOGOS (jogos.html) - filtros e ordenação
+   ========================================================= */
+.toolbar select { cursor: pointer; transition: border-color 0.2s; }
+.toolbar select:hover,
+.toolbar select:focus { outline: none; border-color: blueviolet; }
+
+#semResultados { margin: 10px 0 25px; }
+#semResultados[hidden] { display: none; }
