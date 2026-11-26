@@ -164,3 +164,118 @@
   selOrdem.addEventListener('change', atualizar);
   atualizar();
 })();
+
+/* ---------------------------------------------------------
+   NOTÍCIAS (noticias.html) - filtro de categoria, modal e newsletter
+   --------------------------------------------------------- */
+(function () {
+  const listaNoticias = document.getElementById('listaNoticias');
+  if (!listaNoticias) return;
+
+  // Filtro por categoria
+  const pills = document.querySelectorAll('.pill-btn');
+  const cards = listaNoticias.querySelectorAll('.news-card');
+
+  pills.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      pills.forEach(function (p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+
+      const cat = btn.getAttribute('data-cat');
+      cards.forEach(function (card) {
+        const match = cat === 'todas' || card.getAttribute('data-category') === cat;
+        card.style.display = match ? '' : 'none';
+      });
+    });
+  });
+
+  // Modal de leitura completa
+  const modal = document.getElementById('noticiaModal');
+  const fecharModal = document.getElementById('fecharModal');
+
+  document.querySelectorAll('.btn-ler-noticia').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.getElementById('modalTitulo').textContent = btn.dataset.titulo;
+      document.getElementById('modalCategoria').textContent = btn.dataset.categoria;
+      document.getElementById('modalAutor').innerHTML = 'Por <strong>' + btn.dataset.autor + '</strong>';
+      document.getElementById('modalConteudo').textContent = btn.dataset.conteudo;
+      const img = document.getElementById('modalImagem');
+      img.src = btn.dataset.imagem;
+      img.alt = btn.dataset.titulo;
+      modal.hidden = false;
+    });
+  });
+
+  if (fecharModal && modal) {
+    fecharModal.addEventListener('click', function () { modal.hidden = true; });
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) modal.hidden = true;
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !modal.hidden) modal.hidden = true;
+    });
+  }
+
+  // Newsletter
+  const newsForm = document.getElementById('newsletterForm');
+  if (newsForm) {
+    newsForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('newsletterMsg').textContent =
+        'Inscrição confirmada! Você receberá o resumo semanal do GameHub.';
+      newsForm.reset();
+    });
+  }
+})();
+
+/* ---------------------------------------------------------
+   RANKING (ranking.html) - abas e filtros de jogadores
+   --------------------------------------------------------- */
+(function () {
+  const tabelaJogadores = document.getElementById('tabelaJogadores');
+  if (!tabelaJogadores) return;
+
+  // Alternância entre abas
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+
+  tabBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      tabBtns.forEach(function (b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      tabPanels.forEach(function (p) { p.hidden = true; });
+
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      const alvo = document.getElementById(btn.getAttribute('data-tab'));
+      if (alvo) alvo.hidden = false;
+    });
+  });
+
+  // Filtro de jogadores por nome e patente
+  const buscaInput = document.getElementById('buscaJogador');
+  const patenteSelect = document.getElementById('filtroPatente');
+  const linhas = Array.from(tabelaJogadores.querySelectorAll('tbody tr'));
+  const msgVazio = document.getElementById('semJogadores');
+
+  function filtrarJogadores() {
+    const termo = (buscaInput.value || '').trim().toLowerCase();
+    const patente = patenteSelect.value;
+    let visiveis = 0;
+
+    linhas.forEach(function (tr) {
+      const nome = tr.cells[1].textContent.toLowerCase();
+      const patLinha = tr.getAttribute('data-patente');
+      const ok = (!termo || nome.indexOf(termo) !== -1) && (!patente || patLinha === patente);
+      tr.style.display = ok ? '' : 'none';
+      if (ok) visiveis++;
+    });
+
+    if (msgVazio) msgVazio.hidden = visiveis > 0;
+  }
+
+  if (buscaInput) buscaInput.addEventListener('input', filtrarJogadores);
+  if (patenteSelect) patenteSelect.addEventListener('change', filtrarJogadores);
+})();

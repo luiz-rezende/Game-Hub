@@ -12,10 +12,10 @@
     <nav aria-label="Navegação principal">
       <ul>
         <li><a href="logado.html">INÍCIO</a></li>
-        <li><a href="jogos.html" >JOGOS</a></li>
-        <li><a href="ranking.html" >RANKING</a></li>
+        <li><a href="jogos.html">JOGOS</a></li>
+        <li><a href="ranking.html">RANKING</a></li>
         <li><a href="noticias.html" class="active" aria-current="page">NOTÍCIAS</a></li>
-        <li><a href="contato.html" >CONTATO</a></li>
+        <li><a href="contato.html">CONTATO</a></li>
       </ul>
     </nav>
     <form class="search-form" action="jogos.html" method="get">
@@ -25,28 +25,200 @@
   </header>
 
   <main>
-
     <section class="page-heading">
       <span class="eyebrow">Fique por dentro</span>
       <h1>Notícias do Mundo Gamer</h1>
-      <p>Lançamentos, atualizações, eventos e novidades da indústria dos games.</p>
+      <p>Lançamentos, atualizações, análises técnicas, e-sports e novidades da indústria dos games em novembro de 2026.</p>
     </section>
-    <section class="grid" aria-label="Notícias">
-      <article class="card news-card">
+
+    <!-- Notícia Principal em Destaque -->
+    <article class="featured-news">
+      <img src="img/gta.png" alt="Destaque Grand Theft Auto VI">
+      <div class="featured-news-content">
+        <div class="news-meta">
+          <span class="badge-destaque">DESTAQUE DA SEMANA</span>
+          <span class="news-date">LANÇAMENTOS · 25 NOV 2026 · 5 MIN DE LEITURA</span>
+        </div>
+        <h2>Grand Theft Auto VI domina as vendas e bate recordes de jogadores simultâneos nos consoles</h2>
+        <p>
+          Após anos de expectativa, a estreia oficial de GTA VI no PlayStation 5 e Xbox Series X|S movimentou a indústria global. Confira os detalhes técnicos da versão de lançamento, o tamanho do arquivo e o que esperar do modo online nos próximos meses.
+        </p>
+        <div class="featured-news-footer">
+          <span class="news-author">Por <strong>Redação GameHub</strong></span>
+          <button type="button" class="button btn-ler-noticia"
+            data-titulo="Grand Theft Auto VI domina as vendas e bate recordes de jogadores simultâneos nos consoles"
+            data-categoria="LANÇAMENTOS · 25 NOV 2026"
+            data-autor="Redação GameHub"
+            data-imagem="img/gta.png"
+            data-conteudo="Lançado oficialmente em 19 de novembro de 2026 para PlayStation 5 e Xbox Series X|S, Grand Theft Auto VI rapidamente se tornou o maior lançamento de entretenimento do ano. Com um mapa expansivo ambientado no estado de Leonida e uma campanha protagonizada por Lucia e Jason, o título impressiona pelo nível de densidade urbana e inteligência artificial dos NPCs. A Rockstar Games também confirmou que os primeiros ajustes de estabilidade já foram aplicados e que novidades sobre a expansão do modo online e a futura versão de PC serão divulgadas no início de 2027.">
+            LER MATÉRIA COMPLETA &#10142;
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Barra de Filtros por Categoria -->
+    <div class="section-title">
+      <h2>Últimas notícias</h2>
+      <div class="filter-pills" role="group" aria-label="Filtrar notícias por categoria">
+        <button type="button" class="pill-btn active" data-cat="todas">Todas</button>
+        <button type="button" class="pill-btn" data-cat="lancamentos">Lançamentos</button>
+        <button type="button" class="pill-btn" data-cat="atualizacoes">Atualizações</button>
+        <button type="button" class="pill-btn" data-cat="comunidade">Comunidade</button>
+        <button type="button" class="pill-btn" data-cat="esports">E-Sports</button>
+      </div>
+    </div>
+
+    <section class="news-grid" id="listaNoticias" aria-label="Lista de notícias">
+      <article class="card news-card" data-category="lancamentos">
+        <img src="img/zelda-totk.jpg" alt="Imagem ilustrativa de The Legend of Zelda">
+        <div class="card-content">
+          <span class="news-date">LANÇAMENTOS · 22 NOV 2026 · 4 MIN</span>
+          <h3>Remake de Zelda: Ocarina of Time impulsiona vendas do Nintendo Switch 2</h3>
+          <p>A reimaginação completa do clássico de 1998 chegou ao novo console da Nintendo com resolução 4K e trilha orquestrada.</p>
+          <div class="news-card-footer">
+            <span class="tag">Switch 2</span>
+            <button type="button" class="button btn-ler-noticia"
+              data-titulo="Remake de Zelda: Ocarina of Time impulsiona vendas do Nintendo Switch 2"
+              data-categoria="LANÇAMENTOS · 22 NOV 2026"
+              data-autor="Lucas Almeida"
+              data-imagem="img/zelda-totk.jpg"
+              data-conteudo="O aguardado remake de The Legend of Zelda: Ocarina of Time estreou neste mês no Nintendo Switch 2 e já figura entre os títulos mais bem avaliados de 2026. Além da reconstrução gráfica completa de Hyrule a 60 quadros por segundo, o jogo traz controles aprimorados para arco e gancho, novas missões secundárias no Templo do Tempo e suporte a áudio espacial.">
+              LER NOTÍCIA
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card news-card" data-category="atualizacoes">
+        <img src="img/sekiro.jpg" alt="Imagem ilustrativa de jogo de ação samurai">
+        <div class="card-content">
+          <span class="news-date">ATUALIZAÇÕES · 26 NOV 2026 · 3 MIN</span>
+          <h3>Phantom Blade Zero recebe patch de 7 GB com melhorias de desempenho no PC e PS5</h3>
+          <p>A atualização reduz o consumo de memória VRAM, elimina engasgos em chefes e adiciona opções de câmera de combate.</p>
+          <div class="news-card-footer">
+            <span class="tag">Patch Notes</span>
+            <button type="button" class="button btn-ler-noticia"
+              data-titulo="Phantom Blade Zero recebe patch de 7 GB com melhorias de desempenho no PC e PS5"
+              data-categoria="ATUALIZAÇÕES · 26 NOV 2026"
+              data-autor="Mariana Costa"
+              data-imagem="img/sekiro.jpg"
+              data-conteudo="A desenvolvedora S-Game detalhou a atualização 1.0304629 de Phantom Blade Zero, com aproximadamente 7 GB. O pacote otimiza o uso de RAM e VRAM durante cinemáticas e áreas com efeitos de neve, corrige falhas visuais em placas Radeon RX 9000 e inclui uma nova aba de Assistência de Combate com ajuste de sensibilidade para troca de alvo no mouse.">
+              LER NOTÍCIA
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card news-card" data-category="atualizacoes">
+        <img src="img/cyberpunk2077.jpg" alt="Imagem ilustrativa de Cyberpunk 2077">
+        <div class="card-content">
+          <span class="news-date">ATUALIZAÇÕES · 20 NOV 2026 · 4 MIN</span>
+          <h3>CD Projekt RED reafirma cronograma de The Witcher IV e sequência de Cyberpunk</h3>
+          <p>Estúdio polonês comenta o impacto dos grandes lançamentos do fim de ano e atualiza o status de suas produções em Unreal Engine 5.</p>
+          <div class="news-card-footer">
+            <span class="tag">Indústria</span>
+            <button type="button" class="button btn-ler-noticia"
+              data-titulo="CD Projekt RED reafirma cronograma de The Witcher IV e sequência de Cyberpunk"
+              data-categoria="ATUALIZAÇÕES · 20 NOV 2026"
+              data-autor="Rafael Nunes"
+              data-imagem="img/cyberpunk2077.jpg"
+              data-conteudo="Em conferência com investidores, a CD Projekt RED confirmou que o calendário repleto de lançamentos no final de 2026 não alterou o planejamento interno para The Witcher IV (codinome Polaris) nem para o próximo jogo da franquia Cyberpunk. Mais de 400 desenvolvedores seguem dedicados à produção principal do novo capítulo da saga do bruxo.">
+              LER NOTÍCIA
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card news-card" data-category="comunidade">
         <img src="img/eldering.jpg" alt="Imagem ilustrativa de Elden Ring">
-        <div class="card-content"><span class="news-date">LANÇAMENTOS · 24 NOV 2026</span><h3>Novidades e lançamentos aguardados</h3><p>Acompanhe os principais anúncios e descubra quais aventuras estão chegando ao universo dos games.</p><a class="button" href="#">LER NOTÍCIA</a></div>
+        <div class="card-content">
+          <span class="news-date">COMUNIDADE · 18 NOV 2026 · 3 MIN</span>
+          <h3>Desafio sem sofrer dano em Elden Ring reúne mais de 15 mil espectadores ao vivo</h3>
+          <p>Criadores de conteúdo brasileiros organizam maratona cooperativa e batem recorde de arrecadação beneficente.</p>
+          <div class="news-card-footer">
+            <span class="tag">Soulslike</span>
+            <button type="button" class="button btn-ler-noticia"
+              data-titulo="Desafio sem sofrer dano em Elden Ring reúne mais de 15 mil espectadores ao vivo"
+              data-categoria="COMUNIDADE · 18 NOV 2026"
+              data-autor="Camila Rocha"
+              data-imagem="img/eldering.jpg"
+              data-conteudo="A comunidade brasileira de jogos Soulslike promoveu no último fim de semana uma maratona de desafios No-Hit em Elden Ring e sua expansão Shadow of the Erdtree. O evento durou 14 horas, reuniu dezenas de speedrunners e arrecadou doações destinadas a projetos de inclusão digital para jovens.">
+              LER NOTÍCIA
+            </button>
+          </div>
+        </div>
       </article>
-      <article class="card news-card">
-        <img src="img/godofwar.jpg" alt="Imagem ilustrativa de God of War">
-        <div class="card-content"><span class="news-date">ATUALIZAÇÕES · 20 NOV 2026</span><h3>Atualizações que movimentam a comunidade</h3><p>Veja como atualizações, novos modos e conteúdos extras renovam a experiência dos jogadores.</p><a class="button" href="#">LER NOTÍCIA</a></div>
+
+      <article class="card news-card" data-category="esports">
+        <img src="img/starcraft2.jpg" alt="Imagem ilustrativa de E-Sports">
+        <div class="card-content">
+          <span class="news-date">E-SPORTS · 15 NOV 2026 · 5 MIN</span>
+          <h3>Finais mundiais de estratégia e FPS encerram a temporada competitiva de 2026</h3>
+          <p>Equipes sul-americanas garantem vaga nos playoffs internacionais e disputam premiação milionária neste fim de mês.</p>
+          <div class="news-card-footer">
+            <span class="tag">Competitivo</span>
+            <button type="button" class="button btn-ler-noticia"
+              data-titulo="Finais mundiais de estratégia e FPS encerram a temporada competitiva de 2026"
+              data-categoria="E-SPORTS · 15 NOV 2026"
+              data-autor="Bruno Ferreira"
+              data-imagem="img/starcraft2.jpg"
+              data-conteudo="Com arenas lotadas e transmissões simultâneas em cinco idiomas, os torneios de encerramento da temporada 2026 consolidam o crescimento do cenário competitivo na América Latina. As partidas decisivas acontecem neste sábado e domingo, valendo o troféu global e vagas diretas para o circuito de 2027.">
+              LER NOTÍCIA
+            </button>
+          </div>
+        </div>
       </article>
-      <article class="card news-card">
-        <img src="img/gta.png" alt="Imagem ilustrativa de GTA">
-        <div class="card-content"><span class="news-date">COMUNIDADE · 15 NOV 2026</span><h3>Os jogos mais comentados pelos jogadores</h3><p>Confira os títulos que estão gerando conversas e conquistando espaço entre os fãs.</p><a class="button" href="#">LER NOTÍCIA</a></div>
+
+      <article class="card news-card" data-category="lancamentos">
+        <img src="img/baldursgate3.jpg" alt="Imagem ilustrativa de RPG tático">
+        <div class="card-content">
+          <span class="news-date">LANÇAMENTOS · 12 NOV 2026 · 4 MIN</span>
+          <h3>Metaphor: ReFantazio chega ao Nintendo Switch 2 com todos os conteúdos extras</h3>
+          <p>O premiado JRPG da Atlus ganha edição portátil otimizada com modo desempenho e suporte a saves na nuvem.</p>
+          <div class="news-card-footer">
+            <span class="tag">RPG</span>
+            <button type="button" class="button btn-ler-noticia"
+              data-titulo="Metaphor: ReFantazio chega ao Nintendo Switch 2 com todos os conteúdos extras"
+              data-categoria="LANÇAMENTOS · 12 NOV 2026"
+              data-autor="Lucas Almeida"
+              data-imagem="img/baldursgate3.jpg"
+              data-conteudo="A Atlus lançou oficialmente Metaphor: ReFantazio para o Nintendo Switch 2, levando o aclamado RPG de turnos para o formato híbrido. A versão inclui todos os pacotes cosméticos lançados anteriormente, tempos de carregamento reduzidos e suporte completo ao modo portátil em 1080p.">
+              LER NOTÍCIA
+            </button>
+          </div>
+        </div>
       </article>
     </section>
 
+    <!-- Seção de Newsletter -->
+    <section class="newsletter-box" aria-label="Inscrição na newsletter">
+      <div>
+        <span class="eyebrow">Resumo semanal</span>
+        <h2>Receba as principais notícias no seu e-mail</h2>
+        <p class="muted">Toda sexta-feira enviamos os destaques da semana, datas de lançamento e promoções selecionadas.</p>
+      </div>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" id="newsletterEmail" placeholder="Digite seu melhor e-mail..." aria-label="E-mail para newsletter" required>
+        <button type="submit">INSCREVER-SE</button>
+        <p class="form-message" id="newsletterMsg" role="status"></p>
+      </form>
+    </section>
   </main>
+
+  <!-- Modal de Leitura da Notícia -->
+  <div class="modal-overlay" id="noticiaModal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo" hidden>
+    <div class="modal-card">
+      <button type="button" class="modal-close" id="fecharModal" aria-label="Fechar notícia">&times;</button>
+      <img id="modalImagem" src="" alt="">
+      <div class="modal-body">
+        <span class="news-date" id="modalCategoria"></span>
+        <h2 id="modalTitulo"></h2>
+        <p class="news-author" id="modalAutor"></p>
+        <p class="modal-text" id="modalConteudo"></p>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <div class="footer-container">
@@ -81,5 +253,6 @@
     </div>
     <div class="footer-bottom">© 2026 GameHub. Todos os direitos reservados.</div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>

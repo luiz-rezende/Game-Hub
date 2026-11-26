@@ -12,10 +12,10 @@
     <nav aria-label="Navegação principal">
       <ul>
         <li><a href="logado.html">INÍCIO</a></li>
-        <li><a href="jogos.html" >JOGOS</a></li>
+        <li><a href="jogos.html">JOGOS</a></li>
         <li><a href="ranking.html" class="active" aria-current="page">RANKING</a></li>
-        <li><a href="noticias.html" >NOTÍCIAS</a></li>
-        <li><a href="contato.html" >CONTATO</a></li>
+        <li><a href="noticias.html">NOTÍCIAS</a></li>
+        <li><a href="contato.html">CONTATO</a></li>
       </ul>
     </nav>
     <form class="search-form" action="jogos.html" method="get">
@@ -25,26 +25,280 @@
   </header>
 
   <main>
-
     <section class="page-heading">
-      <span class="eyebrow">Dispute o topo</span>
-      <h1>Ranking de Jogadores</h1>
-      <p>Veja a classificação da comunidade e acompanhe quem está liderando a competição.</p>
+      <span class="eyebrow">Temporada 04 · Novembro 2026</span>
+      <h1>Ranking da Comunidade</h1>
+      <p>Acompanhe os jogadores mais ativos do GameHub, suas patentes, taxa de vitórias e os títulos mais bem avaliados pelos usuários.</p>
     </section>
-    <div class="section-title"><h2>Melhores jogadores</h2><span class="tag">Temporada demonstrativa</span></div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Posição</th><th>Jogador</th><th>Jogos</th><th>Pontuação</th></tr></thead>
-        <tbody>
-          <tr><td class="position">#1</td><td><div class="player"><span class="avatar">1</span>PlayerOne</div></td><td>42</td><td><strong>12.850 pts</strong></td></tr>
-          <tr><td class="position">#2</td><td><div class="player"><span class="avatar">2</span>ShadowGamer</div></td><td>38</td><td><strong>11.420 pts</strong></td></tr>
-          <tr><td class="position">#3</td><td><div class="player"><span class="avatar">3</span>PixelMaster</div></td><td>35</td><td><strong>10.975 pts</strong></td></tr>
-          <tr><td>#4</td><td><div class="player"><span class="avatar">4</span>GameNinja</div></td><td>31</td><td>9.840 pts</td></tr>
-          <tr><td>#5</td><td><div class="player"><span class="avatar">5</span>RetroPlayer</div></td><td>29</td><td>9.210 pts</td></tr>
-        </tbody>
-      </table>
+
+    <!-- Cards de Resumo da Temporada -->
+    <section class="stats-grid" aria-label="Estatísticas da temporada">
+      <div class="stat-card">
+        <span class="stat-label">Jogadores Ranqueados</span>
+        <strong class="stat-value">1.480</strong>
+        <span class="stat-sub">+12% nesta semana</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Conquistas Registradas</span>
+        <strong class="stat-value">38.920</strong>
+        <span class="stat-sub">Em 40 jogos do catálogo</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Média Top 10</span>
+        <strong class="stat-value">10.415 pts</strong>
+        <span class="stat-sub">Corte para Elo Mestre</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Fim da Temporada</span>
+        <strong class="stat-value">18 dias</strong>
+        <span class="stat-sub">Encerra em 15 Dez 2026</span>
+      </div>
+    </section>
+
+    <!-- Pódio Top 3 -->
+    <section class="podium-section" aria-label="Pódio dos três melhores jogadores">
+      <article class="podium-card silver">
+        <span class="podium-rank">#2 PRATA</span>
+        <div class="podium-avatar">SG</div>
+        <h3>ShadowGamer</h3>
+        <span class="rank-badge badge-mestre">Mestre</span>
+        <p class="podium-points">11.420 pts</p>
+        <div class="podium-meta">
+          <span>38 jogos</span>
+          <span>•</span>
+          <span>74% vitórias</span>
+        </div>
+      </article>
+
+      <article class="podium-card gold">
+        <span class="podium-rank">★ #1 OURO</span>
+        <div class="podium-avatar">PO</div>
+        <h3>PlayerOne</h3>
+        <span class="rank-badge badge-desafiante">Desafiante</span>
+        <p class="podium-points">12.850 pts</p>
+        <div class="podium-meta">
+          <span>42 jogos</span>
+          <span>•</span>
+          <span>81% vitórias</span>
+        </div>
+      </article>
+
+      <article class="podium-card bronze">
+        <span class="podium-rank">#3 BRONZE</span>
+        <div class="podium-avatar">PM</div>
+        <h3>PixelMaster</h3>
+        <span class="rank-badge badge-mestre">Mestre</span>
+        <p class="podium-points">10.975 pts</p>
+        <div class="podium-meta">
+          <span>35 jogos</span>
+          <span>•</span>
+          <span>71% vitórias</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- Abas de Alternância: Jogadores vs Jogos -->
+    <div class="ranking-tabs" role="tablist" aria-label="Tipo de ranking">
+      <button type="button" class="tab-btn active" data-tab="tab-jogadores" role="tab" aria-selected="true">
+        Ranking de Jogadores
+      </button>
+      <button type="button" class="tab-btn" data-tab="tab-jogos" role="tab" aria-selected="false">
+        Top Jogos Avaliados
+      </button>
     </div>
 
+    <!-- Painel 1: Tabela de Jogadores -->
+    <section id="tab-jogadores" class="tab-panel active">
+      <div class="toolbar ranking-toolbar">
+        <input type="search" id="buscaJogador" placeholder="Filtrar jogador por apelido..." aria-label="Filtrar jogador">
+        <select id="filtroPatente" aria-label="Filtrar por patente">
+          <option value="">Todas as patentes</option>
+          <option value="Desafiante">Desafiante</option>
+          <option value="Mestre">Mestre</option>
+          <option value="Diamante">Diamante</option>
+          <option value="Platina">Platina</option>
+        </select>
+      </div>
+
+      <p id="semJogadores" class="empty-note" hidden>Nenhum jogador encontrado com esses critérios.</p>
+
+      <div class="table-wrap">
+        <table id="tabelaJogadores">
+          <thead>
+            <tr>
+              <th>Posição</th>
+              <th>Jogador</th>
+              <th>Patente</th>
+              <th>Jogos</th>
+              <th>Taxa de Vitória</th>
+              <th>Pontuação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-patente="Desafiante">
+              <td class="position">#1 <span class="trend up" title="Subiu 1 posição">▲</span></td>
+              <td><div class="player"><span class="avatar gold-bg">1</span><div>PlayerOne<small class="player-sub">Favorito: Elden Ring</small></div></div></td>
+              <td><span class="rank-badge badge-desafiante">Desafiante</span></td>
+              <td>42</td>
+              <td><div class="winrate-bar"><span style="width: 81%"></span></div><small>81%</small></td>
+              <td><strong>12.850 pts</strong></td>
+            </tr>
+            <tr data-patente="Mestre">
+              <td class="position">#2 <span class="trend down" title="Caiu 1 posição">▼</span></td>
+              <td><div class="player"><span class="avatar silver-bg">2</span><div>ShadowGamer<small class="player-sub">Favorito: Baldur's Gate 3</small></div></div></td>
+              <td><span class="rank-badge badge-mestre">Mestre</span></td>
+              <td>38</td>
+              <td><div class="winrate-bar"><span style="width: 74%"></span></div><small>74%</small></td>
+              <td><strong>11.420 pts</strong></td>
+            </tr>
+            <tr data-patente="Mestre">
+              <td class="position">#3 <span class="trend neutral" title="Manteve posição">●</span></td>
+              <td><div class="player"><span class="avatar bronze-bg">3</span><div>PixelMaster<small class="player-sub">Favorito: Sekiro</small></div></div></td>
+              <td><span class="rank-badge badge-mestre">Mestre</span></td>
+              <td>35</td>
+              <td><div class="winrate-bar"><span style="width: 71%"></span></div><small>71%</small></td>
+              <td><strong>10.975 pts</strong></td>
+            </tr>
+            <tr data-patente="Diamante">
+              <td>#4 <span class="trend up" title="Subiu 2 posições">▲</span></td>
+              <td><div class="player"><span class="avatar">4</span><div>GameNinja<small class="player-sub">Favorito: Ghost of Tsushima</small></div></div></td>
+              <td><span class="rank-badge badge-diamante">Diamante</span></td>
+              <td>31</td>
+              <td><div class="winrate-bar"><span style="width: 68%"></span></div><small>68%</small></td>
+              <td>9.840 pts</td>
+            </tr>
+            <tr data-patente="Diamante">
+              <td>#5 <span class="trend neutral" title="Manteve posição">●</span></td>
+              <td><div class="player"><span class="avatar">5</span><div>RetroPlayer<small class="player-sub">Favorito: Zelda: Breath of the Wild</small></div></div></td>
+              <td><span class="rank-badge badge-diamante">Diamante</span></td>
+              <td>29</td>
+              <td><div class="winrate-bar"><span style="width: 65%"></span></div><small>65%</small></td>
+              <td>9.210 pts</td>
+            </tr>
+            <tr data-patente="Diamante">
+              <td>#6 <span class="trend up" title="Subiu 1 posição">▲</span></td>
+              <td><div class="player"><span class="avatar">6</span><div>ValkyrieBR<small class="player-sub">Favorito: God of War Ragnarök</small></div></div></td>
+              <td><span class="rank-badge badge-diamante">Diamante</span></td>
+              <td>27</td>
+              <td><div class="winrate-bar"><span style="width: 63%"></span></div><small>63%</small></td>
+              <td>8.790 pts</td>
+            </tr>
+            <tr data-patente="Platina">
+              <td>#7 <span class="trend down" title="Caiu 2 posições">▼</span></td>
+              <td><div class="player"><span class="avatar">7</span><div>CyberHunter<small class="player-sub">Favorito: Cyberpunk 2077</small></div></div></td>
+              <td><span class="rank-badge badge-platina">Platina</span></td>
+              <td>25</td>
+              <td><div class="winrate-bar"><span style="width: 60%"></span></div><small>60%</small></td>
+              <td>8.340 pts</td>
+            </tr>
+            <tr data-patente="Platina">
+              <td>#8 <span class="trend up" title="Subiu 3 posições">▲</span></td>
+              <td><div class="player"><span class="avatar">8</span><div>TacticsLord<small class="player-sub">Favorito: Civilization VI</small></div></div></td>
+              <td><span class="rank-badge badge-platina">Platina</span></td>
+              <td>24</td>
+              <td><div class="winrate-bar"><span style="width: 59%"></span></div><small>59%</small></td>
+              <td>7.980 pts</td>
+            </tr>
+            <tr data-patente="Platina">
+              <td>#9 <span class="trend neutral" title="Manteve posição">●</span></td>
+              <td><div class="player"><span class="avatar">9</span><div>NightOwl<small class="player-sub">Favorito: Bloodborne</small></div></div></td>
+              <td><span class="rank-badge badge-platina">Platina</span></td>
+              <td>21</td>
+              <td><div class="winrate-bar"><span style="width: 57%"></span></div><small>57%</small></td>
+              <td>7.510 pts</td>
+            </tr>
+            <tr data-patente="Platina">
+              <td>#10 <span class="trend up" title="Entrou no Top 10">▲</span></td>
+              <td><div class="player"><span class="avatar">10</span><div>StarlightGG<small class="player-sub">Favorito: Persona 5 Royal</small></div></div></td>
+              <td><span class="rank-badge badge-platina">Platina</span></td>
+              <td>20</td>
+              <td><div class="winrate-bar"><span style="width: 55%"></span></div><small>55%</small></td>
+              <td>7.190 pts</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Painel 2: Ranking dos Jogos Mais Bem Avaliados -->
+    <section id="tab-jogos" class="tab-panel" hidden>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Posição</th>
+              <th>Jogo</th>
+              <th>Gênero</th>
+              <th>Avaliações</th>
+              <th>Nota da Comunidade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="position">#1</td>
+              <td><div class="player"><img class="game-thumb" src="img/zelda-botw.jpg" alt="Zelda: Breath of the Wild">Zelda: Breath of the Wild</div></td>
+              <td><span class="tag">Aventura</span><span class="tag">Mundo aberto</span></td>
+              <td>1.240 votos</td>
+              <td><span class="rating">★ 9.7/10</span></td>
+            </tr>
+            <tr>
+              <td class="position">#2</td>
+              <td><div class="player"><img class="game-thumb" src="img/zelda-totk.jpg" alt="Zelda: Tears of the Kingdom">Zelda: Tears of the Kingdom</div></td>
+              <td><span class="tag">Aventura</span><span class="tag">Mundo aberto</span></td>
+              <td>1.115 votos</td>
+              <td><span class="rating">★ 9.6/10</span></td>
+            </tr>
+            <tr>
+              <td class="position">#3</td>
+              <td><div class="player"><img class="game-thumb" src="img/baldursgate3.jpg" alt="Baldur's Gate 3">Baldur's Gate 3</div></td>
+              <td><span class="tag">RPG</span><span class="tag">Estratégia</span></td>
+              <td>1.390 votos</td>
+              <td><span class="rating">★ 9.6/10</span></td>
+            </tr>
+            <tr>
+              <td>#4</td>
+              <td><div class="player"><img class="game-thumb" src="img/godofwar2018.jpg" alt="God of War (2018)">God of War (2018)</div></td>
+              <td><span class="tag">Ação</span><span class="tag">Aventura</span></td>
+              <td>980 votos</td>
+              <td><span class="rating">★ 9.4/10</span></td>
+            </tr>
+            <tr>
+              <td>#5</td>
+              <td><div class="player"><img class="game-thumb" src="img/persona5royal.jpg" alt="Persona 5 Royal">Persona 5 Royal</div></td>
+              <td><span class="tag">RPG</span></td>
+              <td>860 votos</td>
+              <td><span class="rating">★ 9.4/10</span></td>
+            </tr>
+            <tr>
+              <td>#6</td>
+              <td><div class="player"><img class="game-thumb" src="img/witcher3.jpg" alt="The Witcher 3: Wild Hunt">The Witcher 3: Wild Hunt</div></td>
+              <td><span class="tag">RPG</span><span class="tag">Mundo aberto</span></td>
+              <td>1.520 votos</td>
+              <td><span class="rating">★ 9.3/10</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Como funciona a pontuação -->
+    <section class="scoring-info" aria-label="Critérios de pontuação">
+      <h2>Como funciona a pontuação?</h2>
+      <div class="scoring-grid">
+        <div class="scoring-item">
+          <strong>+150 pts · Jogo Concluído</strong>
+          <p class="muted">Registre títulos zerados do catálogo do GameHub no seu perfil.</p>
+        </div>
+        <div class="scoring-item">
+          <strong>+50 pts · Avaliação Publicada</strong>
+          <p class="muted">Escreva análises úteis para ajudar outros jogadores da comunidade.</p>
+        </div>
+        <div class="scoring-item">
+          <strong>+300 pts · 100% de Conquistas</strong>
+          <p class="muted">Bônus especial para jogadores que platinam desafios completos.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -80,5 +334,6 @@
     </div>
     <div class="footer-bottom">© 2026 GameHub. Todos os direitos reservados.</div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
