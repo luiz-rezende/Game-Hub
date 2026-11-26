@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GAMEHUB - Entrar</title>
+  <title>Entrar | GAMEHUB</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="pagina-login">
 
   <header>
-    <a href="index.html" class="logo"><span class="p">G</span><span class="w">AME</span><span class="p">HUB</span></a>
+    <a href="index.html" aria-label="Página de login"><h1 class="logo"><span>G</span>AME<span>HUB</span></h1></a>
   </header>
 
   <main class="login-main">
@@ -23,7 +23,7 @@
 
       <div class="login-alerta" id="formAlert" role="alert"></div>
 
-      <form id="loginForm" novalidate onsubmit="if (typeof validar !== 'function') { alert('O arquivo login.js não foi carregado. Coloque o login.js na mesma pasta do index.html.'); return false; }">
+      <form id="loginForm" novalidate>
         <div class="campo" id="fieldEmail">
           <label for="email">E-mail</label>
           <div class="campo-input">
@@ -53,7 +53,7 @@
     </section>
   </main>
 
-  <footer class="footer-login">&copy; 2026 GameHub. Todos os direitos reservados.</footer>
+  <footer class="footer-login">© 2026 GameHub. Todos os direitos reservados.</footer>
 
   <script src="script.js"></script>
 </body>

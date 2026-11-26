@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogos | GAMEHUB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="logado.html" aria-label="Página inicial"><h1 class="logo"><span>G</span>AME<span>HUB</span></h1></a>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="logado.html">INÍCIO</a></li>
+        <li><a href="jogos.html" class="active" aria-current="page">JOGOS</a></li>
+        <li><a href="ranking.html" >RANKING</a></li>
+        <li><a href="noticias.html" >NOTÍCIAS</a></li>
+        <li><a href="contato.html" >CONTATO</a></li>
+      </ul>
+    </nav>
+    <form class="search-form" action="jogos.html" method="get">
+      <input type="search" name="q" placeholder="Buscar jogos..." aria-label="Buscar jogos">
+      <button type="submit">BUSCAR</button>
+    </form>
+  </header>
+
+  <main>
+
+    <section class="page-heading">
+      <span class="eyebrow">Explore o catálogo</span>
+      <h1>Biblioteca de Jogos</h1>
+      <p>Encontre seu próximo jogo favorito. Explore títulos, gêneros e avaliações da comunidade.</p>
+    </section>
+    <div class="toolbar">
+      <select id="filtroCategoria" aria-label="Filtrar por categoria">
+        <option value="">Todas as categorias</option><option value="RPG">RPG</option><option value="Ação">Ação</option><option value="Aventura">Aventura</option><option value="Mundo aberto">Mundo aberto</option><option value="Estratégia">Estratégia</option>
+      </select>
+      <select id="ordenarJogos" aria-label="Ordenar jogos">
+        <option value="populares">Mais populares</option><option value="avaliados">Melhor avaliados</option><option value="alfabetica">Ordem alfabética</option>
+      </select>
+    </div>
+    <p id="semResultados" class="empty-note" hidden>Nenhum jogo encontrado com esses filtros.</p>
+    <section class="grid" aria-label="Lista de jogos">
+      <article class="card"><img src="img/eldering.jpg" alt="Capa de Elden Ring"><div class="card-content"><h3>Elden Ring</h3><p>Explore um vasto mundo de fantasia e enfrente desafios épicos.</p><span class="rating">★ 8.8/10</span><div><span class="tag">RPG</span><span class="tag">Aventura</span></div></div></article>
+      <article class="card"><img src="img/godofwar.jpg" alt="Capa de God of War Ragnarök"><div class="card-content"><h3>God of War Ragnarök</h3><p>Uma jornada intensa de ação, mitologia e descobertas.</p><span class="rating">★ 8.5/10</span><div><span class="tag">Ação</span><span class="tag">Aventura</span></div></div></article>
+      <article class="card"><img src="img/gta.png" alt="Capa de GTA V"><div class="card-content"><h3>GTA V</h3><p>Viva histórias e explore um grande mundo aberto.</p><span class="rating">★ 8.5/10</span><div><span class="tag">Ação</span><span class="tag">Mundo aberto</span></div></div></article>
+      <article class="card"><img src="img/thelastofus.png" alt="Capa de The Last of Us Part I"><div class="card-content"><h3>The Last of Us Part I</h3><p>Uma experiência narrativa de sobrevivência e aventura.</p><span class="rating">★ 8.4/10</span><div><span class="tag">Ação</span><span class="tag">Aventura</span></div></div></article>
+      <article class="card"><img src="img/rdr.png" alt="Capa de Red Dead Redemption 2"><div class="card-content"><h3>Red Dead Redemption 2</h3><p>Uma aventura no Velho Oeste em um mundo detalhado.</p><span class="rating">★ 8.3/10</span><div><span class="tag">Ação</span><span class="tag">Aventura</span></div></div></article>
+
+      <article class="card"><img src="img/witcher3.jpg" alt="Capa de The Witcher 3: Wild Hunt"><div class="card-content"><h3>The Witcher 3: Wild Hunt</h3><p>Caçe monstros e decida o destino de um continente em guerra.</p><span class="rating">★ 9.3/10</span><div><span class="tag">RPG</span><span class="tag">Mundo aberto</span></div></div></article>
+      <article class="card"><img src="img/zelda-botw.jpg" alt="Capa de The Legend of Zelda: Breath of the Wild"><div class="card-content"><h3>Zelda: Breath of the Wild</h3><p>Explore Hyrule com total liberdade e descubra seus segredos.</p><span class="rating">★ 9.7/10</span><div><span class="tag">Aventura</span><span class="tag">Mundo aberto</span></div></div></article>
+      <article class="card"><img src="img/zelda-totk.jpg" alt="Capa de The Legend of Zelda: Tears of the Kingdom"><div class="card-content"><h3>Zelda: Tears of the Kingdom</h3><p>Céus, terra e subterrâneo em uma aventura cheia de criatividade.</p><span class="rating">★ 9.6/10</span><div><span class="tag">Aventura</span><span class="tag">Mundo aberto</span></div></div></article>
+      <article class="card"><img src="img/minecraft.jpg" alt="Capa de Minecraft"><div class="card-content"><h3>Minecraft</h3><p>Construa, minere e sobreviva em mundos gerados sem limites.</p><span class="rating">★ 9.0/10</span><div><span class="tag">Aventura</span><span class="tag">Mundo aberto</span></div></div></article>
+      <article class="card"><img src="img/cyberpunk2077.jpg" alt="Capa de Cyberpunk 2077"><div class="card-content"><h3>Cyberpunk 2077</h3><p>Mercenário em Night City, uma metrópole futurista e perigosa.</p><span class="rating">★ 8.6/10</span><div><span class="tag">RPG</span><span class="tag">Ação</span></div></div></article>
+
+      <article class="card"><img src="img/baldursgate3.jpg" alt="Capa de Baldur's Gate 3"><div class="card-content"><h3>Baldur's Gate 3</h3><p>RPG tático com escolhas profundas e consequências reais.</p><span class="rating">★ 9.6/10</span><div><span class="tag">RPG</span><span class="tag">Estratégia</span></div></div></article>
+      <article class="card"><img src="img/darksouls3.jpg" alt="Capa de Dark Souls III"><div class="card-content"><h3>Dark Souls III</h3><p>Combates exigentes em um mundo sombrio à beira do colapso.</p><span class="rating">★ 8.9/10</span><div><span class="tag">RPG</span><span class="tag">Ação</span></div></div></article>
+      <article class="card"><img src="img/sekiro.jpg" alt="Capa de Sekiro: Shadows Die Twice"><div class="card-content"><h3>Sekiro: Shadows Die Twice</h3><p>Um shinobi em busca de vingança no Japão feudal.</p><span class="rating">★ 9.0/10</span><div><span class="tag">Ação</span><span class="tag">Aventura</span></div></div></article>
+      <article class="card"><img src="img/bloodborne.jpg" alt="Capa de Bloodborne"><div class="card-content"><h3>Bloodborne</h3><p>Terror gótico e combate veloz na cidade amaldiçoada de Yharnam.</p><span class="rating">★ 9.0/10</span><div><span class="tag">Ação</span><span class="tag">RPG</span></div></div></article>
+      <article class="card"><img src="img/horizonzerodawn.jpg" alt="Capa de Horizon Zero Dawn"><div class="card-content"><h3>Horizon Zero Dawn</h3><p>Enfrente máquinas gigantes em um mundo pós-apocalíptico.</p><span class="rating">★ 8.7/10</span><div><span class="tag">Ação</span><span class="tag">Mundo aberto</span></div></div></article>
+
+      <article class="card"><img src="img/spiderman2.jpg" alt="Capa de Marvel's Spider-Man 2"><div class="card-content"><h3>Marvel's Spider-Man 2</h3><p>Balance por Nova York com dois heróis e novas ameaças.</p><span class="rating">★ 8.8/10</span><div><span class="tag">Ação</span><span class="tag">Mundo aberto</span></div></div></article>
+      <article class="card"><img src="img/godofwar2018.jpg" alt="Capa de God of War (2018)"><div class="card-content"><h3>God of War (2018)</h3><p>Kratos e Atreus em uma jornada pela mitologia nórdica.</p><span class="rating">★ 9.4/10</span><div><span class="tag">Ação</span><span class="tag">Aventura</span></div></div></article>
+      <article class="card"><img src="img/uncharted4.jpg" alt="Capa de Uncharted 4: A Thief's End"><div class="card-content"><h3>Uncharted 4: A Thief's End</h3><p>A última grande caçada ao tesouro de Nathan Drake.</p><span class="rating">★ 9.0/10</span><div><span class="tag">Ação</span><span class="tag">Aventura</span></div></div></article>
+      <article class="card"><img src="img/acvalhalla.jpg" alt="Capa de Assassin's Creed Valhalla"><div class="card-content"><h3>Assassin's Creed Valhalla</h3><p>Lidere uma invasão viking na Inglaterra medieval.</p><span class="rating">★ 8.2/10</span><div><span class="tag">Ação</span><span class="tag">Mundo aberto</span></div></div></article>
+      <article class="card"><img src="img/acodyssey.jpg" alt="Capa de Assassin's Creed Odyssey"><div class="card-content"><h3>Assassin's Creed Odyssey</h3><p>Viva uma lenda mercenária na Grécia Antiga.</p><span class="rating">★ 8.5/10</span><div><span class="tag">RPG</span><span class="tag">Mundo aberto</span></div></div></article>
+
+      <article class="card"><img src="img/fallout4.jpg" alt="Capa de Fallout 4"><div class="card-content"><h3>Fallout 4</h3><p>Reconstrua a vida em um deserto pós-nuclear cheio de perigos.</p><span class="rating">★ 8.4/10</span><div><span class="tag">RPG</span><span class="tag">Mundo aberto</span></div></div></article>
+      <article class="card"><img src="img/skyrim.jpg" alt="Capa de The Elder Scrolls V: Skyrim"><div class="card-content"><h3>The Elder Scrolls V: Skyrim</h3><p>Torne-se o Dragonborn e explore as terras geladas de Skyrim.</p><span class="rating">★ 9.2/10</span><div><span class="tag">RPG</span><span class="tag">Mundo aberto</span></div></div></article>
+      <article class="card"><img src="img/masseffect.jpg" alt="Capa de Mass Effect Legendary Edition"><div class="card-content"><h3>Mass Effect Legendary Edition</h3><p>A trilogia completa do Comandante Shepard contra os Reapers.</p><span class="rating">★ 9.1/10</span><div><span class="tag">RPG</span><span class="tag">Ação</span></div></div></article>
+      <article class="card"><img src="img/hollowknight.jpg" alt="Capa de Hollow Knight"><div class="card-content"><h3>Hollow Knight</h3><p>Desça ao reino subterrâneo de Hallownest em 2D desafiador.</p><span class="rating">★ 9.0/10</span><div><span class="tag">Aventura</span><span class="tag">Ação</span></div></div></article>
+      <article class="card"><img src="img/hades.jpg" alt="Capa de Hades"><div class="card-content"><h3>Hades</h3><p>Fuja do submundo grego em um roguelike rápido e viciante.</p><span class="rating">★ 9.3/10</span><div><span class="tag">Ação</span><span class="tag">RPG</span></div></div></article>
+
+      <article class="card"><img src="img/celeste.jpg" alt="Capa de Celeste"><div class="card-content"><h3>Celeste</h3><p>Escale a montanha Celeste em um platformer emocionante.</p><span class="rating">★ 8.9/10</span><div><span class="tag">Aventura</span><span class="tag">Ação</span></div></div></article>
+      <article class="card"><img src="img/stardewvalley.jpg" alt="Capa de Stardew Valley"><div class="card-content"><h3>Stardew Valley</h3><p>Cuide da fazenda, faça amigos e viva em ritmo tranquilo.</p><span class="rating">★ 9.0/10</span><div><span class="tag">RPG</span><span class="tag">Aventura</span></div></div></article>
+      <article class="card"><img src="img/terraria.jpg" alt="Capa de Terraria"><div class="card-content"><h3>Terraria</h3><p>Cave, construa e enfrente chefes em um mundo 2D enorme.</p><span class="rating">★ 8.9/10</span><div><span class="tag">Aventura</span><span class="tag">Mundo aberto</span></div></div></article>
+      <article class="card"><img src="img/civilization6.jpg" alt="Capa de Sid Meier's Civilization VI"><div class="card-content"><h3>Civilization VI</h3><p>Construa um império capaz de resistir ao teste do tempo.</p><span class="rating">★ 8.8/10</span><div><span class="tag">Estratégia</span></div></div></article>
+      <article class="card"><img src="img/aoe2.jpg" alt="Capa de Age of Empires II"><div class="card-content"><h3>Age of Empires II</h3><p>Clássico de estratégia em tempo real na Idade Média.</p><span class="rating">★ 8.9/10</span><div><span class="tag">Estratégia</span></div></div></article>
+
+      <article class="card"><img src="img/starcraft2.jpg" alt="Capa de StarCraft II"><div class="card-content"><h3>StarCraft II</h3><p>Estratégia em tempo real com Terran, Zerg e Protoss.</p><span class="rating">★ 8.8/10</span><div><span class="tag">Estratégia</span></div></div></article>
+      <article class="card"><img src="img/xcom2.jpg" alt="Capa de XCOM 2"><div class="card-content"><h3>XCOM 2</h3><p>Lidere a resistência contra invasores alienígenas, turno a turno.</p><span class="rating">★ 8.6/10</span><div><span class="tag">Estratégia</span><span class="tag">Ação</span></div></div></article>
+      <article class="card"><img src="img/totalwarwarhammer3.jpg" alt="Capa de Total War: Warhammer III"><div class="card-content"><h3>Total War: Warhammer III</h3><p>Batalhas épicas e campanhas em um universo de fantasia sombria.</p><span class="rating">★ 8.4/10</span><div><span class="tag">Estratégia</span></div></div></article>
+      <article class="card"><img src="img/re4remake.jpg" alt="Capa de Resident Evil 4 Remake"><div class="card-content"><h3>Resident Evil 4 Remake</h3><p>Leon enfrenta o terror em uma vila isolada na Europa.</p><span class="rating">★ 9.3/10</span><div><span class="tag">Ação</span><span class="tag">Aventura</span></div></div></article>
+      <article class="card"><img src="img/deathstranding.jpg" alt="Capa de Death Stranding"><div class="card-content"><h3>Death Stranding</h3><p>Reconecte um mundo devastado em uma jornada única.</p><span class="rating">★ 8.2/10</span><div><span class="tag">Ação</span><span class="tag">Mundo aberto</span></div></div></article>
+
+      <article class="card"><img src="img/mgsv.jpg" alt="Capa de Metal Gear Solid V: The Phantom Pain"><div class="card-content"><h3>Metal Gear Solid V: The Phantom Pain</h3><p>Infiltração tática com liberdade total em campo aberto.</p><span class="rating">★ 8.8/10</span><div><span class="tag">Ação</span><span class="tag">Mundo aberto</span></div></div></article>
+      <article class="card"><img src="img/ghostoftsushima.jpg" alt="Capa de Ghost of Tsushima"><div class="card-content"><h3>Ghost of Tsushima</h3><p>Um samurai defende a ilha de Tsushima da invasão mongol.</p><span class="rating">★ 9.0/10</span><div><span class="tag">Ação</span><span class="tag">Mundo aberto</span></div></div></article>
+      <article class="card"><img src="img/ff7remake.jpg" alt="Capa de Final Fantasy VII Remake"><div class="card-content"><h3>Final Fantasy VII Remake</h3><p>Reimaginação do clássico com combate dinâmico e visual de ponta.</p><span class="rating">★ 8.8/10</span><div><span class="tag">RPG</span><span class="tag">Ação</span></div></div></article>
+      <article class="card"><img src="img/persona5royal.jpg" alt="Capa de Persona 5 Royal"><div class="card-content"><h3>Persona 5 Royal</h3><p>Ladrões fantasmas, vida escolar e batalhas por turnos cheias de estilo.</p><span class="rating">★ 9.4/10</span><div><span class="tag">RPG</span></div></div></article>
+      <article class="card"><img src="img/doometernal.jpg" alt="Capa de Doom Eternal"><div class="card-content"><h3>Doom Eternal</h3><p>Tiroteio frenético contra as hordas do inferno.</p><span class="rating">★ 8.8/10</span><div><span class="tag">Ação</span></div></div></article>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="about">
+        <h2 class="footer-logo">GAME<span>HUB</span></h2>
+        <p>O seu universo definitivo dos games. Fique por dentro de avaliações, lançamentos e tudo do mundo dos jogos.</p>
+        <div class="socials">
+          <a href="#" aria-label="Discord">◉</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="Instagram">◎</a>
+        </div>
+      </div>
+      <div>
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="logado.html">Início</a></li>
+          <li><a href="jogos.html">Jogos</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="ranking.html">Ranking</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Categorias</h3>
+        <ul>
+          <li><a href="jogos.html">RPG</a></li>
+          <li><a href="jogos.html">Ação e aventura</a></li>
+          <li><a href="jogos.html">Mundo aberto</a></li>
+          <li><a href="jogos.html">Estratégia</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 GameHub. Todos os direitos reservados.</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
